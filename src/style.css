@@ -131,12 +131,11 @@ header h1 {
   opacity: 1;
 }
 
-/* Overlay Style */
-/* Overlay 基本樣式（預設隱藏） */
+/* Overlay Style - Hidden by default*/
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.4); /* 白霧感 */
+  background: rgba(255, 255, 255, 0.4); 
   opacity: 0;
   display: flex;
   align-items: center;

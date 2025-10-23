@@ -17,33 +17,21 @@ body {
 header {
     display: flex;
     justify-content: center;
-    align-items: center;
+    transition: none;
     height: 100vh;
-}
-
-header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: 10px;
-}
-
-.hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
+.collage-item {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+    flex-direction: column;
 }
 
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.caption {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    background: transparent;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+}
     overflow: hidden;
     z-index: -1;
 }
@@ -61,6 +49,87 @@ header h1 {
     pointer-events: none;
 }
 
+/* --- Project Hero (full-width video background) --- */
+.project-hero {
+    position: relative;
+    height: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column; /* stack video then content */
+    align-items: stretch;
+    overflow: hidden;
+    padding: 6rem 2rem; /* same vertical rhythm as .section */
+    margin: 0 20%; /* horizontal 5% margin on both sides */
+}
+
+.project-video-wrap {
+    position: relative; /* flow in document, above which content will appear */
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.project-video {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/*Video black mesh overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.6) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: block;
+    padding: 2rem 0 0; /* spacing above text after video */
+}
+
+.hero-text {
+    max-width: 700px; /* match .section max-width rhythm */
+    background: rgba(0, 0, 0, 0);
+    color: #000000;
+    text-align: left;
+    margin-right: auto; /* align block to right within the content area */
+    padding: 0.5rem 0;
+}
+
+.hero-text h1 {
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+.hero-meta {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #212121;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .project-hero { min-height: 60vh; margin: 0 4%; }
+    .hero-content { padding: 1.5rem 0 0; }
+    .hero-text { text-align: center; max-width: 95%; margin-left: 0; }
+}
+
+@media (max-width: 480px) {
+    .project-hero { margin: 0 3%; padding-left: 1rem; padding-right: 1rem; }
+}
+
 /* --- Section --- */
 .section {
     padding: 6rem 2rem;
@@ -68,6 +137,7 @@ header h1 {
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.6s ease;
+    margin: 0 20%; /* horizontal 5% margin on both sides */
 }
 
 .section.visible {
@@ -82,7 +152,8 @@ header h1 {
 }
 
 .section p {
-    max-width: 700px;
+    max-width: 1000px;
+    font-size: 1rem;
     margin: auto;
     font-weight: 400;
     line-height: 1.8;
@@ -98,7 +169,7 @@ header h1 {
 
 .gallery-item{
     position: relative;
-    overflow: hidden;
+    /*overflow: hidden;*/
     border-radius: 12px;
     cursor: pointer;
 }
@@ -163,16 +234,84 @@ header h1 {
 /* --- Button --- */
 .btn {
     display: inline-block;
-    padding: 20px;
+    padding: 12px 20px;
     font-weight: 600;
     border-radius: 4px;
     border: none;
     text-align: center;
     color: #fff;
     background: #111;
-    width: 200px;
+    width: auto;
     cursor: pointer;
-    transition: background 0.8s;
+    transition: background 0.25s ease;
+}
+
+/* Intention section grid */
+.intention .intention-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3rem;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.intention-text {
+    text-align: left;
+}
+
+.intention-text p {
+    max-width: 680px;
+}
+
+.intention-collage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 0.75rem;
+}
+
+.collage-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.collage-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.collage-item .caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.6rem 0.8rem;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.25s ease;
+}
+
+.collage-item:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.9);
+}
+
+.collage-item:hover .caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .intention .intention-grid { grid-template-columns: 1fr; }
+    .intention-collage { grid-template-columns: repeat(2, 1fr); }
 }
 
 .btn span {
@@ -288,4 +427,54 @@ footer {
 
 .link:hover {
     color: #6a6a6a;
+}
+
+/* --- Research Section (projects/project1.html #project-research) --- */
+.research-section .research-intro {
+    max-width: 980px;
+    margin: 0 auto 1.5rem auto;
+    font-size: 1rem;
+    color: #222;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    margin-top: 1.5rem;
+}
+
+.research-item {
+    background: #fafafa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(16,16,16,0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.research-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.research-caption {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #333;
+    background: transparent;
+}
+
+@media (max-width: 1100px) {
+    .research-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .research-grid { grid-template-columns: 1fr; }
+    .research-item img { height: 220px; }
 }

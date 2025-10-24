@@ -3,29 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Project 1</title>
+    <title>Echoes of Motion</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../src/style.css">
 </head>
 <body>
     <div id="navbar-placeholder"></div>
 
-    <!-- Header Section -->
-    <header>
-        <section id="hero" class="hero">
-            <div class="homepage" id="homepage">
-                <h1 id="company-name">Project 1</h1>
-                <h3> Project description</h3>
-            </div>
-            <div class="video-background" id="video-bg">
-                <iframe
-                    src="https://player.vimeo.com/video/1126703578?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-                    allow="autoplay; fullscreen; picture-in-picture">
-                </iframe>
-            </div>
-        </section>
-    </header>
 
     <!-- Section 1: Project Intro (Hero / Synopsis) -->
     <section id="project-synopsis" class="project-hero">
@@ -49,7 +33,7 @@
                     reshaping a blank wall into an active interface, the work investigates movement as both medium and
                     method of creation, inviting sustained, embodied interaction.
                 </p>
-                <div class="hero-meta">2024 | TouchDesigner, Python (Mediapipe), GLSL | Personal Project</div>
+                <div class="hero-meta">2025 | TouchDesigner, Python, Mediapipe, GLSL | Personal Project</div>
             </div>
         </div>
     </section>
@@ -69,18 +53,19 @@
 
             <div class="intention-collage">
                 <figure class="collage-item">
-                    <img src="../assets/image/demo-img.jpg" alt="Gesture capture">
+                    <img src="../assets/demo/interaction/InteractionDesign-hand-control.png" alt="Gesture capture">
                     <figcaption class="caption">Gesture exploration</figcaption>
                 </figure>
 
-                <figure class="collage-item">
+                <!-- <figure class="collage-item">
                     <img src="../assets/image/demo-img.jpg" alt="Projection test">
                     <figcaption class="caption">Projection test</figcaption>
                 </figure>
+            -->
 
                 <figure class="collage-item">
-                    <img src="../assets/image/demo-img.jpg" alt="Ink diffusion detail">
-                    <figcaption class="caption">Ink diffusion detail</figcaption>
+                    <img src="../assets/demo/real-time-ink-effect-dev.gif" alt="Ink diffusion trail driven by hand movement">
+                    <figcaption class="caption">Ink diffusion trail driven by hand movement</figcaption>
                 </figure>
             </div>
         </div>
@@ -98,60 +83,145 @@
 
             <div class="research-grid">
                 <figure class="research-item">
-                    <img src="../assets/image/research-mediapipe.jpg" alt="Mediapipe palm node screenshot">
-                    <figcaption class="research-caption">Testing hand openness detection with Mediapipe.</figcaption>
+                    <img src="../assets/demo/interaction/openess-definition.png" alt="Refining palm openess with mediapipe">
+                    <figcaption class="research-caption">Define palm openness control with mediapipe.</figcaption>
                 </figure>
 
                 <figure class="research-item">
-                    <img src="../assets/image/research-python-control.png" alt="Python control window showing openness value">
-                    <figcaption class="research-caption">Mapping palm openness value to control diffusion strength.</figcaption>
+                    <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif" alt="ink diffusion triggered by open palm">
+                    <figcaption class="research-caption">Mapping open palm action to trigger digital ink</figcaption>
                 </figure>
+            </div>
 
+            <!--
+            <div>
                 <figure class="research-item">
-                    <img src="../assets/image/research-latency.jpg" alt="Early latency test using OSC data stream">
-                    <figcaption class="research-caption">Early latency test using OSC data stream.</figcaption>
+                <img src="../assets/image/research-latency.jpg" alt="Early latency test using OSC data stream">
+                <figcaption class="research-caption">Early latency test using OSC data stream.</figcaption>
                 </figure>
-
+            -->
                 <figure class="research-item">
                     <img src="../assets/image/research-system-diagram.png" alt="System architecture diagram">
                     <figcaption class="research-caption">System architecture diagram connecting input and shader response.</figcaption>
                 </figure>
             </div>
+
         </div>
     </section>
 
-     <!-- Section 4: Design-->
-     <section id="project-design" class="section">
+     <!-- Section 4: Design -->
+     <section id="project-design" class="section design-section visible">
         <div class="container">
-            <h2>About</h2>
-            <p>
-                We are a creative studio that challenges conventions and reshapes experiences. Through motion graphics,
-                animation, and interactive web design, we craft visuals that engage and inspire across every platform.
-                We transform ideas into immersive journeys that are intuitive, memorable, and meaningful.
+            <h2>Design</h2>
+
+            <div class="design-grid">
+                <!-- Left: System Diagram / Architecture Flow -->
+                <div class="system-diagram">
+                    <!-- Replace the image with an inline SVG animation if available -->
+                    <img src="../assets/image/system-architecture.svg" alt="System architecture diagram: Camera → Python → TouchDesigner → GLSL → Projection">
+
+                    <ul class="system-legend">
+                        <li><strong>Input:</strong> Hand tracking (Mediapipe)</li>
+                        <li><strong>Processing:</strong> Python → OSC → GLSL shader</li>
+                        <li><strong>Output:</strong> Ink diffusion + projection</li>
+                    </ul>
+                </div>
+
+                <!-- Right: Design Language -->
+                <div class="design-language">
+                    <h3>Design Language</h3>
+
+                    <figure class="design-figure">
+                        <img src="../assets/image/design-ink-flow.png" alt="Visual analysis of ink flow patterns">
+                        <figcaption class="design-caption">Visual analysis of ink flow patterns.</figcaption>
+                    </figure>
+
+                    <figure class="design-figure">
+                        <img src="../assets/image/design-gesture-mapping.png" alt="Gesture to visual response mapping (gesture → stroke → diffusion)">
+                        <figcaption class="design-caption">Gesture → stroke → diffusion mapping.</figcaption>
+                    </figure>
+
+                    <p class="design-paragraph">
+                        The design translates motion data into a generative ink system. Each gesture parameter—speed,
+                        openness, and direction—shapes the visual language of flow and spread, creating a fluid dialogue
+                        between movement and form.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Development -->
+     <section id="project-development" class="section development-section visible">
+        <div class="container">
+            <h2>Development</h2>
+
+            <div class="dev-video-wrap">
+                <video class="dev-video" autoplay muted loop playsinline preload="metadata" poster="../assets/image/dev-poster.jpg">
+                    <source src="../assets/video/development_clip.mp4" type="video/mp4">
+                    <!-- Fallback text -->
+                    Your browser does not support the video tag.
+                </video>
+
+                <div class="dev-overlay" aria-hidden="true">
+                    <div class="dev-overlay-text">Real-time response latency &lt; 0.1s</div>
+                </div>
+            </div>
+
+            <div class="dev-thumbs">
+                <figure class="dev-thumb">
+                    <img src="../assets/image/dev-touchdesigner.png" alt="TouchDesigner network view - data flow patch graph">
+                    <figcaption class="dev-caption">Data flow patch graph (TouchDesigner network view)</figcaption>
+                </figure>
+
+                <figure class="dev-thumb">
+                    <img src="../assets/image/dev-glsl-control.png" alt="GLSL shader parameter interface">
+                    <figcaption class="dev-caption">Shader parameter interface (GLSL control panel)</figcaption>
+                </figure>
+
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/interactive_brush_demo.gif" alt="GLSL shader parameter interface">
+                    <figcaption class="dev-caption">Testing interactive brush with ink diffusion effect (GLSL control)</figcaption>
+                </figure>
+
+                <figure class="dev-thumb">
+                    <img src="../assets/image/dev-installation.jpg" alt="Installation photo of projection on wall">
+                    <figcaption class="dev-caption">Installation photo (projection on wall)</figcaption>
+                </figure>
+            </div>
+
+            <p class="dev-paragraph">
+                The development focused on integrating gesture data into a real-time shader environment. Mediapipe
+                output was streamed via OSC into TouchDesigner, driving ink diffusion in GLSL. Optimization work
+                reduced latency and enhanced the visual responsiveness of the projected wall, resulting in a fluid
+                and immediate interaction between audience motion and generative visuals.
             </p>
-        </div>
-    </section>
 
-    <!-- Section 5: Development-->
-     <section id="project-development" class="section">
-        <div class="container">
-            <h2>About</h2>
-            <p>
-                We are a creative studio that challenges conventions and reshapes experiences. Through motion graphics,
-                animation, and interactive web design, we craft visuals that engage and inspire across every platform.
-                We transform ideas into immersive journeys that are intuitive, memorable, and meaningful.
+            <div class="dev-thumbs">
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/interaction/z_smoothing_kalman_filter.png" alt="TouchDesigner network view - data flow patch graph">
+                    <figcaption class="dev-caption">Data flow patch graph (TouchDesigner network view)</figcaption>
+                </figure>
+            </div>
+            <p class="design-paragraph">
+                To stabilize hand movements along the Z-axis, I applied a Kalman Filter, a predictive algorithm commonly used for smoothing noisy sensor data in robotics control and vehicle navigation. In early tests, the hand approach / retreat detection did not work out because of noisy signals. Hand tracking sensors often produce jitter when the hand approaches or moves away from the device, due to depth sensing noise and rapid motion. The Kalman Filter predicts the hand’s next position based on previous measurements and corrects deviations, producing smoother, more reliable motion data.
+                This allows the generative ink trails in Echoes of Motion to respond fluidly to gestures, maintaining the intuitive, playful interaction without distraction from unstable input signals.
+
             </p>
+
         </div>
     </section>
 
-    <!-- Section 6: Future Opportunities-->
-     <section id="project-future" class="section">
+    <!-- Section 6: Future Opportunities -->
+     <section id="project-future" class="section future-section visible">
         <div class="container">
-            <h2>About</h2>
-            <p>
-                We are a creative studio that challenges conventions and reshapes experiences. Through motion graphics,
-                animation, and interactive web design, we craft visuals that engage and inspire across every platform.
-                We transform ideas into immersive journeys that are intuitive, memorable, and meaningful.
+            <h2>Future Opportunities</h2>
+
+            <p class="future-paragraph">
+                Future iterations will explore multi-user interaction, sound-driven responses, and spatialized audio to
+                expand the system into immersive environments. We will investigate scalability, collaborative scenarios,
+                and deployment in galleries and public spaces. The project aims to establish embodied motion as a
+                universal interface for creative expression, enabling shared, expressive experiences.
             </p>
         </div>
     </section>

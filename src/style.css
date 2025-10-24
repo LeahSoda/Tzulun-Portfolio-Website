@@ -51,56 +51,68 @@ header {
 
 /* --- Project Hero (full-width video background) --- */
 .project-hero {
-    position: relative;
-    height: auto;
-    min-height: 0;
     display: flex;
-    flex-direction: column; /* stack video then content */
-    align-items: stretch;
+    flex-direction: column;
+    height: 100vh; /* try to fit one screen (video + text) */
+    min-height: 520px;
     overflow: hidden;
-    padding: 6rem 2rem; /* same vertical rhythm as .section */
-    margin: 0 20%; /* horizontal 5% margin on both sides */
+    padding: 0;
+    margin: 0;
 }
 
 .project-video-wrap {
-    position: relative; /* flow in document, above which content will appear */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    overflow: hidden;
+    padding: 2rem 0; /* vertical spacing above/below the video box */
+    background: transparent;
     z-index: 0;
 }
 
+.project-video-wrap > img,
+.project-video-wrap iframe,
 .project-video {
-    position: relative;
-    display: block;
-    width: 100%;
+    width: min(1280px, 100%); /* Vimeo-like max width */
+    aspect-ratio: 16 / 9; /* keep 16:9 box */
     height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(16,16,16,0.08);
     object-fit: cover;
 }
+
+/* ensure iframe/video fills the aspect box correctly */
+.project-video-wrap iframe,
+.project-video-wrap video { width: 100%; height: 100%; }
 
 /*Video black mesh overlay */
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.6) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.02) 40%, rgba(0,0,0,0.04) 100%);
     z-index: 1;
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    width: 100%;
     display: block;
-    padding: 2rem 0 0; /* spacing above text after video */
+    padding-top: 3rem; /* gap between video and text */
 }
 
 .hero-text {
-    max-width: 700px; /* match .section max-width rhythm */
-    background: rgba(0, 0, 0, 0);
-    color: #000000;
+    max-width: 720px;
+    background: transparent;
+    color: #111;
     text-align: left;
-    margin-right: auto; /* align block to right within the content area */
-    padding: 0.5rem 0;
+    margin: 0 auto 3rem auto; /* center and keep 3rem bottom gap */
+    padding: 0;
 }
+
+.hero-text h1 { color: inherit; }
+.hero-text p { color: inherit; opacity: 0.95; }
 
 .hero-text h1 {
     font-size: 2.25rem;
@@ -116,18 +128,20 @@ header {
 .hero-meta {
     margin-top: 1rem;
     font-size: 0.95rem;
-    color: #212121;
+    color: #969696;
     font-weight: 600;
 }
 
 @media (max-width: 900px) {
-    .project-hero { min-height: 60vh; margin: 0 4%; }
+    .project-hero { min-height: 60vh; }
+    .project-video-wrap { height: 55vh; }
     .hero-content { padding: 1.5rem 0 0; }
     .hero-text { text-align: center; max-width: 95%; margin-left: 0; }
 }
 
 @media (max-width: 480px) {
     .project-hero { margin: 0 3%; padding-left: 1rem; padding-right: 1rem; }
+    .project-video-wrap { height: 50vh; }
 }
 
 /* --- Section --- */
@@ -265,7 +279,8 @@ header {
 
 .intention-collage {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /*grid-template-columns: repeat(3, 1fr);*/
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
     gap: 0.75rem;
 }
@@ -439,9 +454,9 @@ footer {
 
 .research-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    align-items: start;
+    align-items: center;
     margin-top: 1.5rem;
 }
 
@@ -456,7 +471,7 @@ footer {
 
 .research-item img {
     width: 100%;
-    height: 180px;
+    height: 100%; /*crop later */
     object-fit: cover;
     display: block;
 }
@@ -477,4 +492,142 @@ footer {
 @media (max-width: 600px) {
     .research-grid { grid-template-columns: 1fr; }
     .research-item img { height: 220px; }
+}
+
+/* --- Design Section (projects/project1.html #project-design) --- */
+.design-section .design-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 1.5rem;
+}
+
+.system-diagram img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.system-legend {
+    margin-top: 0.75rem;
+    list-style: none;
+    padding-left: 0;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.system-legend li { margin: 0.35rem 0; }
+
+.design-language h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+
+.design-figure {
+    margin-bottom: 1rem;
+}
+
+.design-figure img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.design-caption {
+    padding-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #444;
+    text-align: center;
+}
+
+.design-paragraph {
+    margin-top: 0.75rem;
+    max-width: 620px;
+    color: #222;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .design-section .design-grid { grid-template-columns: 1fr; }
+    .design-figure img { height: 200px; }
+}
+
+/* --- Development Section (projects/project1.html #project-development) --- */
+.development-section .dev-video-wrap {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #000;
+}
+
+.dev-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dev-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.dev-overlay-text {
+    margin: 1.25rem;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.dev-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: start;
+}
+
+.dev-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.dev-caption {
+    padding-top: 0.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.dev-paragraph {
+    margin-top: 1rem;
+    max-width: 820px;
+    color: #222;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .development-section .dev-video-wrap { height: 45vh; }
+    .dev-thumbs { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .dev-thumbs { grid-template-columns: 1fr; }
+    .dev-thumb img { height: 220px; }
 }

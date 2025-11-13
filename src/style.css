@@ -10,27 +10,38 @@ body {
     color: #111;
 }
 
+.logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
 .project-video-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 0;
+    
     /* vertical spacing above/below the video box */
     background: transparent;
     z-index: 0;
 }
 
-line-height: 1.6;
-overflow-x: hidden;
-}
-
 /* --- Header --- */
 header {
+    position: absolute;
+    top: 5%;
+    left: 5%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
     transition: none;
     height: 100vh;
+    overflow: hidden;
+    z-index: -1;
 
     .collage-item {
         display: flex;
@@ -45,9 +56,6 @@ header {
         font-weight: 600;
         text-align: center;
     }
-
-    overflow: hidden;
-    z-index: -1;
 }
 
 .video-background iframe {
@@ -95,7 +103,6 @@ header {
     height: auto;
     display: block;
     border-radius: 8px;
-    box-shadow: 0 12px 30px rgba(16, 16, 16, 0.08);
     object-fit: cover;
 }
 
@@ -312,6 +319,16 @@ header {
     transition: background 0.25s ease;
 }
 
+.synopsis {
+    align-items: center;
+    margin: 20px;
+}
+
+.synopsis p{
+    text-align: left;
+    margin-bottom: 20px;
+}
+
 /* Intention section grid */
 .intention .intention-grid {
     display: grid;
@@ -332,12 +349,6 @@ header {
     margin-bottom: 20px;
 }
 
-.intention-text-bold {
-    max-width: 1000px;
-    font-weight: 800;
-    line-height: 2;
-    margin-bottom: 2rem;
-}
 
 .intention-collage {
     display: grid;
@@ -745,7 +756,6 @@ header,
     #project-synopsis,
     #project-video-wrap {
         padding-top: 1.6rem;
-        /* keep proportionally smaller on tablet */
         padding-bottom: 1.6rem;
     }
 }

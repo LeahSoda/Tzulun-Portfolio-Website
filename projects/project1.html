@@ -48,16 +48,10 @@
         <div class="container">
             <div id="project-synopsis" class="synopsis">
                 <p>
-                    Echoes of Motion transforms human gestures into living visuals that flow and react in real time.
-                    Inspired by
-                    the adaptive rhythm of natural systems, the work turns motion signals into a language of artistic
-                    expression—beyond learned skill or tool-based control. Each gesture triggers a feedback loop between
-                    body
-                    and computation, where the system responds like a counterpart sensing and sketching back. Through
-                    this
-                    exchange, movement itself becomes an expressive trace of rhythm, hesitation, and instinct—revealing
-                    the
-                    unseen logic of being in motion.
+                    Echoes of Motion transforms human gestures into living, real-time visuals that behave like responsive organisms.
+The system interprets motion not as a command, but as a fluid, adaptive language. It is driven by rhythm, hesitation, intention, and play.
+
+Each gesture enters a feedback loop: the body influences the system, and the system sketches back. Through this exchange, movement becomes a visible trace of perception and expression, revealing how humans learn, adapt, and sense through motion.
                 </p>
             </div>
         </div>
@@ -85,23 +79,20 @@
             <div class="intention-text">
                 <h2>Intention</h2>
                 <p>
-                    In Echoes of Motion, I explore how movement can exist as both input and expression within a
-                    computational system. I’m drawn to the idea that motion, something instinctive and deeply human, can
-                    become a form of language that speaks through feedback and rhythm.
+                    Echoes of Motion began with a question: How can movement function not only as force, but as a language of creation?
                 </p>
                 <p>
-                    Influenced by theories of embodied cognition and ecological perception, I see interaction as an act
-                    of sensing and understanding rather than control. The project grows from my curiosity about how
-                    people adapt when facing an unfamiliar, responsive environment—how gesture and reaction can shape
-                    new ways of learning and expression.
+                    The inspiration emerges from dance, where gesture operates simultaneously as expression and interaction. Drawing from embodied cognition and ecological perception, I approach movement not as a tool for control but as a form of sensing—a way humans understand and respond to dynamic environments.
                 </p>
                 <p>
-                    Inspired by the unfiltered creativity of play, I treat each gesture as a dialogue between intuition
-                    and computation. This led me to design a real-time system that translates body and hand movement
-                    into evolving visual patterns—turning motion itself into an ongoing conversation between human and
-                    machine, where technology begins to echo the emotional and perceptual traces of being human.
+                    I’m interested in motion as a way of interacting with space, as a direct and intuitive form of communication between humans and their surroundings. With Echoes of Motion, I explore how a blank wall can be reshaped into a responsive interface, shifting interaction away from personal screens and back into the shared environment. Much like the instinctive creativity of childhood—when drawing on walls felt natural, exploratory, and free—the project revives that sense of playful engagement through computational means.
                 </p>
-
+                <p>
+                    In Echoes of Motion, each gesture initiates a conversation with the system. Instead of treating motion as positional input, the system detects expressive features in motion, namely continuity, hesitation, and rhythm, and responds with evolving visual behavior. This exchange creates a feedback loop in which the human and the computational system continuously adapt to one another, transforming the wall into a dynamic canvas that listens and sketches back.
+                </p>
+                <p>
+                    Through this dialogue, Echoes of Motion examines how movement can become a language that emerges through interaction rather than instruction. The project seeks to reveal how intuitive expression can shape real-time computational environments, and how technology can echo the perceptual and emotional traces embedded in human motion while extending them into the surrounding space.
+                </p>
             </div>
 
             <div class="intention-collage">
@@ -169,7 +160,10 @@
     <!-- Section 4: Design -->
     <section id="project-design" class="section design-section visible">
         <div class="container">
-            <h2>Design</h2>
+            <h2>Technical Approach</h2>
+            <p>
+                Echoes of Motion translates hand and body movement into a generative visual system through a three-layer pipeline: sensing movement, interpreting its expressive qualities, and visualizing its relationship with computational feedback.
+            </p>
 
             <div class="design-grid">
                 <!-- Left: System Diagram / Architecture Flow -->
@@ -185,30 +179,18 @@
                     </ul>
                 </div>
 
-                <!-- Right: Design Language -->
-                <div class="design-language">
-                    <h3>Design Language</h3>
-
-                    <figure class="design-figure">
-                        <img src="../assets/image/design-ink-flow.png" alt="Visual analysis of ink flow patterns">
-                        <figcaption class="design-caption">Visual analysis of ink flow patterns.</figcaption>
-                    </figure>
-
-                    <figure class="design-figure">
-                        <img src="../assets/image/design-gesture-mapping.png"
-                            alt="Gesture to visual response mapping (gesture → stroke → diffusion)">
-                        <figcaption class="design-caption">Gesture → stroke → diffusion mapping.</figcaption>
-                    </figure>
-
-                    <p class="design-paragraph">
-                        The design translates motion data into a generative ink system. Each gesture parameter—speed,
-                        openness, and direction—shapes the visual language of flow and spread, creating a fluid dialogue
-                        between movement and form.
-                    </p>
-                </div>
             </div>
+            <p>
+                The system first captures hand movement through a web camera, and then extracts expressive features such as direction, continuity, and gesture, and maps them to parameters of a GLSL-based visual system.
+            </p>
+            <img src="../assets/image/system-architecture.svg"
+                        alt="System Architecture Diagram">
+
+            <p>
+               The resulting patterns form a feedback loop in which the system “sketches back,” inviting the participant to adjust their gestures. Through this ongoing exchange, movement gradually becomes a language of creation between human and machine. 
+            </p>
         </div>
-    </section>
+   </section>
 
     <!-- Section 5: Development -->
     <section id="project-development" class="section development-section visible">
@@ -286,12 +268,15 @@
         <div class="container">
             <h2>Future Opportunities</h2>
 
-            <p class="future-paragraph">
-                Future iterations will explore multi-user interaction, sound-driven responses, and spatialized audio to
-                expand the system into immersive environments. We will investigate scalability, collaborative scenarios,
-                and deployment in galleries and public spaces. The project aims to establish embodied motion as a
-                universal interface for creative expression, enabling shared, expressive experiences.
-            </p>
+         <li>
+            Expand the motion recognition system to a more complete gesture mapping language system to digital brush behavior.
+         </li>
+         <li>
+            Exploring multi-user interactions that turn shared movement into collective expression.
+         </li>
+         <li>
+            Extending the installation into architectural or public spaces, where walls and environments become responsive surfaces.
+         </li>
         </div>
     </section>
 

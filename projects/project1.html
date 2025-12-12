@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,33 +8,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../src/style.css">
 </head>
+
 <body>
     <div id="navbar-placeholder"></div>
 
     <header>
-        <div class="section">
-        <figure class="collage-item">
-            <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif" alt="echoes of motion">
-        </figure>
+
+        <!--<div class="section">
+            <figure class="collage-item">
+                <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif"
+                    alt="echoes of motion">
+            </figure>
         </div>
+    -->
     </header>
 
     <!-- Section 1: Project Intro (Hero / Synopsis) -->
-    <section id="project-synopsis" class="project-hero">
+    <section id="project-title" class="section intention visible">
         <div class="hero-content">
             <div class="hero-text">
-                <h2>Echoes of Motion</h2>
-                <p>
-                    Echoes of Motion is a responsive digital canvas triggered by hand gestures. Viewers interact through
-                    motion, co-creating evolving ink trails that visualize exploration and playful discovery. By
-                    reshaping a blank wall into an active interface, the work investigates movement as both medium and
-                    method of creation, inviting sustained, embodied interaction.
+                <h1>Echoes of Motion</h1>
+                <p class="hero-text">Can movement become a language of creation?
                 </p>
-                <div class="hero-meta">2025 | TouchDesigner, Python, Mediapipe, GLSL | Personal Project</div>
+            </div>
+
+            <div class="section">
+                <figure class="collage-item">
+                    <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif"
+                        alt="echoes of motion">
+                </figure>
+                <div class="hero-meta">
+                    <p>2025 | TouchDesigner, Python, Mediapipe, GLSL | Personal Project</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div id="project-synopsis" class="synopsis">
+                <p>
+                    Echoes of Motion transforms human gestures into living, real-time visuals that behave like responsive organisms.
+The system interprets motion not as a command, but as a fluid, adaptive language. It is driven by rhythm, hesitation, intention, and play.
+
+Each gesture enters a feedback loop: the body influences the system, and the system sketches back. Through this exchange, movement becomes a visible trace of perception and expression, revealing how humans learn, adapt, and sense through motion.
+                </p>
             </div>
         </div>
+
+        </div>
+
     </section>
-    
+
     <!-- Project Video (main hero embed) -->
     <section id="project-video-wrap" class="section intention visible">
         <div class="container">
@@ -50,15 +76,24 @@
     <!-- Section 2: Intention -->
     <section id="project-intention" class="section intention visible">
         <div class="container">
-                <div class="intention-text">
-                    <h2>Intention</h2>
-                    <p>
-                        Echoes of Motion reexamines how we interact with space by transforming architectural surfaces into
-                        responsive canvases. Inspired by the instinctive childhood act of drawing on walls, the project
-                        reconnects that impulse through motion-triggered generative ink. It invites intuitive engagement
-                        with our surroundings, offering a playful alternative to screen-based interaction.
-                    </p>
-                </div>
+            <div class="intention-text">
+                <h2>Intention</h2>
+                <p>
+                    Echoes of Motion began with a question: How can movement function not only as force, but as a language of creation?
+                </p>
+                <p>
+                    The inspiration emerges from dance, where gesture operates simultaneously as expression and interaction. Drawing from embodied cognition and ecological perception, I approach movement not as a tool for control but as a form of sensing—a way humans understand and respond to dynamic environments.
+                </p>
+                <p>
+                    I’m interested in motion as a way of interacting with space, as a direct and intuitive form of communication between humans and their surroundings. With Echoes of Motion, I explore how a blank wall can be reshaped into a responsive interface, shifting interaction away from personal screens and back into the shared environment. Much like the instinctive creativity of childhood—when drawing on walls felt natural, exploratory, and free—the project revives that sense of playful engagement through computational means.
+                </p>
+                <p>
+                    In Echoes of Motion, each gesture initiates a conversation with the system. Instead of treating motion as positional input, the system detects expressive features in motion, namely continuity, hesitation, and rhythm, and responds with evolving visual behavior. This exchange creates a feedback loop in which the human and the computational system continuously adapt to one another, transforming the wall into a dynamic canvas that listens and sketches back.
+                </p>
+                <p>
+                    Through this dialogue, Echoes of Motion examines how movement can become a language that emerges through interaction rather than instruction. The project seeks to reveal how intuitive expression can shape real-time computational environments, and how technology can echo the perceptual and emotional traces embedded in human motion while extending them into the surrounding space.
+                </p>
+            </div>
 
             <div class="intention-collage">
                 <figure class="collage-item">
@@ -73,15 +108,16 @@
             -->
 
                 <figure class="collage-item">
-                    <img src="../assets/demo/real-time-ink-effect-dev.gif" alt="Ink diffusion trail driven by hand movement">
+                    <img src="../assets/demo/real-time-ink-effect-dev.gif"
+                        alt="Ink diffusion trail driven by hand movement">
                     <figcaption class="caption">Ink diffusion trail driven by hand movement</figcaption>
                 </figure>
             </div>
         </div>
     </section>
 
-     <!-- Section 3: Research  -->
-     <section id="project-research" class="section research-section visible">
+    <!-- Section 3: Research  -->
+    <section id="project-research" class="section research-section visible">
         <div class="container">
             <h2>Research</h2>
 
@@ -92,12 +128,14 @@
 
             <div class="research-grid">
                 <figure class="research-item">
-                    <img src="../assets/demo/interaction/openess-definition.png" alt="Refining palm openess with mediapipe">
+                    <img src="../assets/demo/interaction/openess-definition.png"
+                        alt="Refining palm openess with mediapipe">
                     <figcaption class="research-caption">Define palm openness control with mediapipe.</figcaption>
                 </figure>
 
                 <figure class="research-item">
-                    <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif" alt="ink diffusion triggered by open palm">
+                    <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif"
+                        alt="ink diffusion triggered by open palm">
                     <figcaption class="research-caption">Mapping open palm action to trigger digital ink</figcaption>
                 </figure>
             </div>
@@ -109,25 +147,30 @@
                 <figcaption class="research-caption">Early latency test using OSC data stream.</figcaption>
                 </figure>
             -->
-                <figure class="research-item">
-                    <img src="../assets/demo/interaction/system-architechture.png" alt="System architecture diagram">
-                    <figcaption class="research-caption">System architecture diagram connecting input and shader response.</figcaption>
-                </figure>
-            </div>
+            <figure class="research-item">
+                <img src="../assets/demo/interaction/system-architechture.png" alt="System architecture diagram">
+                <figcaption class="research-caption">System architecture diagram connecting input and shader response.
+                </figcaption>
+            </figure>
+        </div>
 
         </div>
     </section>
 
-     <!-- Section 4: Design -->
-     <section id="project-design" class="section design-section visible">
+    <!-- Section 4: Design -->
+    <section id="project-design" class="section design-section visible">
         <div class="container">
-            <h2>Design</h2>
+            <h2>Technical Approach</h2>
+            <p>
+                Echoes of Motion translates hand and body movement into a generative visual system through a three-layer pipeline: sensing movement, interpreting its expressive qualities, and visualizing its relationship with computational feedback.
+            </p>
 
             <div class="design-grid">
                 <!-- Left: System Diagram / Architecture Flow -->
                 <div class="system-diagram">
                     <!-- Replace the image with an inline SVG animation if available -->
-                    <img src="../assets/image/system-architecture.svg" alt="System architecture diagram: Camera → Python → TouchDesigner → GLSL → Projection">
+                    <img src="../assets/image/system-architecture.svg"
+                        alt="System architecture diagram: Camera → Python → TouchDesigner → GLSL → Projection">
 
                     <ul class="system-legend">
                         <li><strong>Input:</strong> Hand tracking (Mediapipe)</li>
@@ -136,37 +179,27 @@
                     </ul>
                 </div>
 
-                <!-- Right: Design Language -->
-                <div class="design-language">
-                    <h3>Design Language</h3>
-
-                    <figure class="design-figure">
-                        <img src="../assets/image/design-ink-flow.png" alt="Visual analysis of ink flow patterns">
-                        <figcaption class="design-caption">Visual analysis of ink flow patterns.</figcaption>
-                    </figure>
-
-                    <figure class="design-figure">
-                        <img src="../assets/image/design-gesture-mapping.png" alt="Gesture to visual response mapping (gesture → stroke → diffusion)">
-                        <figcaption class="design-caption">Gesture → stroke → diffusion mapping.</figcaption>
-                    </figure>
-
-                    <p class="design-paragraph">
-                        The design translates motion data into a generative ink system. Each gesture parameter—speed,
-                        openness, and direction—shapes the visual language of flow and spread, creating a fluid dialogue
-                        between movement and form.
-                    </p>
-                </div>
             </div>
+            <p>
+                The system first captures hand movement through a web camera, and then extracts expressive features such as direction, continuity, and gesture, and maps them to parameters of a GLSL-based visual system.
+            </p>
+            <img src="../assets/image/system-architecture.svg"
+                        alt="System Architecture Diagram">
+
+            <p>
+               The resulting patterns form a feedback loop in which the system “sketches back,” inviting the participant to adjust their gestures. Through this ongoing exchange, movement gradually becomes a language of creation between human and machine. 
+            </p>
         </div>
-    </section>
+   </section>
 
     <!-- Section 5: Development -->
-     <section id="project-development" class="section development-section visible">
+    <section id="project-development" class="section development-section visible">
         <div class="container">
             <h2>Development</h2>
 
             <div class="dev-video-wrap">
-                <video class="dev-video" autoplay muted loop playsinline preload="metadata" poster="../assets/image/dev-poster.jpg">
+                <video class="dev-video" autoplay muted loop playsinline preload="metadata"
+                    poster="../assets/image/dev-poster.jpg">
                     <source src="../assets/video/development_clip.mp4" type="video/mp4">
                     <!-- Fallback text -->
                     Your browser does not support the video tag.
@@ -179,7 +212,8 @@
 
             <div class="dev-thumbs">
                 <figure class="dev-thumb">
-                    <img src="../assets/image/dev-touchdesigner.png" alt="TouchDesigner network view - data flow patch graph">
+                    <img src="../assets/image/dev-touchdesigner.png"
+                        alt="TouchDesigner network view - data flow patch graph">
                     <figcaption class="dev-caption">Data flow patch graph (TouchDesigner network view)</figcaption>
                 </figure>
 
@@ -190,7 +224,8 @@
 
                 <figure class="dev-thumb">
                     <img src="../assets/demo/interactive_brush_demo.gif" alt="GLSL shader parameter interface">
-                    <figcaption class="dev-caption">Testing interactive brush with ink diffusion effect (GLSL control)</figcaption>
+                    <figcaption class="dev-caption">Testing interactive brush with ink diffusion effect (GLSL control)
+                    </figcaption>
                 </figure>
 
                 <figure class="dev-thumb">
@@ -208,13 +243,20 @@
 
             <div class="dev-thumbs">
                 <figure class="dev-thumb">
-                    <img src="../assets/demo/interaction/z_smoothing_kalman_filter.png" alt="TouchDesigner network view - data flow patch graph">
+                    <img src="../assets/demo/interaction/z_smoothing_kalman_filter.png"
+                        alt="TouchDesigner network view - data flow patch graph">
                     <figcaption class="dev-caption">Data flow patch graph (TouchDesigner network view)</figcaption>
                 </figure>
             </div>
             <p class="design-paragraph">
-                To stabilize hand movements along the Z-axis, I applied a Kalman Filter, a predictive algorithm commonly used for smoothing noisy sensor data in robotics control and vehicle navigation. In early tests, the hand approach / retreat detection did not work out because of noisy signals. Hand tracking sensors often produce jitter when the hand approaches or moves away from the device, due to depth sensing noise and rapid motion. The Kalman Filter predicts the hand’s next position based on previous measurements and corrects deviations, producing smoother, more reliable motion data.
-                This allows the generative ink trails in Echoes of Motion to respond fluidly to gestures, maintaining the intuitive, playful interaction without distraction from unstable input signals.
+                To stabilize hand movements along the Z-axis, I applied a Kalman Filter, a predictive algorithm commonly
+                used for smoothing noisy sensor data in robotics control and vehicle navigation. In early tests, the
+                hand approach / retreat detection did not work out because of noisy signals. Hand tracking sensors often
+                produce jitter when the hand approaches or moves away from the device, due to depth sensing noise and
+                rapid motion. The Kalman Filter predicts the hand’s next position based on previous measurements and
+                corrects deviations, producing smoother, more reliable motion data.
+                This allows the generative ink trails in Echoes of Motion to respond fluidly to gestures, maintaining
+                the intuitive, playful interaction without distraction from unstable input signals.
 
             </p>
 
@@ -222,16 +264,19 @@
     </section>
 
     <!-- Section 6: Future Opportunities -->
-     <section id="project-future" class="section future-section visible">
+    <section id="project-future" class="section future-section visible">
         <div class="container">
             <h2>Future Opportunities</h2>
 
-            <p class="future-paragraph">
-                Future iterations will explore multi-user interaction, sound-driven responses, and spatialized audio to
-                expand the system into immersive environments. We will investigate scalability, collaborative scenarios,
-                and deployment in galleries and public spaces. The project aims to establish embodied motion as a
-                universal interface for creative expression, enabling shared, expressive experiences.
-            </p>
+         <li>
+            Expand the motion recognition system to a more complete gesture mapping language system to digital brush behavior.
+         </li>
+         <li>
+            Exploring multi-user interactions that turn shared movement into collective expression.
+         </li>
+         <li>
+            Extending the installation into architectural or public spaces, where walls and environments become responsive surfaces.
+         </li>
         </div>
     </section>
 
@@ -243,11 +288,11 @@
 
 
     <!-- Footer -->
-<footer>
-    <p>© <span id="year"></span> Tzulun All Rights Reserved.</p>
-</footer>
+    <footer>
+        <p>© <span id="year"></span> Tzulun All Rights Reserved.</p>
+    </footer>
 
-<script src="../src/main.js"></script>
+    <script src="../src/main.js"></script>
 </body>
 
 </html>

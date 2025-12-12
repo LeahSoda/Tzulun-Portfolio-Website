@@ -18,7 +18,7 @@ body {
     padding: 0; /* vertical spacing above/below the video box */
     background: transparent;
     z-index: 0;
-}
+
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -28,13 +28,13 @@ header {
     display: flex;
     justify-content: center;
     transition: none;
-    height: 100vh;
-
+    height: 3rem;
+    position: relative;
+}
 .collage-item {
     display: flex;
     flex-direction: column;
 }
-
 .caption {
     display: block;
     padding: 0.6rem 0.8rem;
@@ -42,9 +42,39 @@ header {
     color: #333;
     font-weight: 600;
     text-align: center;
-}
     overflow: hidden;
     z-index: -1;
+}
+
+.header-bar {
+    position: absolute;
+    top: 2rem;
+    left: 20%;
+    padding: 0.5rem 1rem;
+    z-index: 10;
+}
+
+.nav-bar {
+    position: absolute;
+    top: 3rem;
+    right: 20%;
+    display: flex;
+    gap: 1.5rem;
+    z-index: 100;
+    pointer-events: auto;
+}
+
+.nav-bar-link {
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+}
+.nav-bar-link.active {
+    text-decoration: none;
+    color: #808ba7;
+    font-weight: 600;
+    cursor: default;
+    pointer-events: none;
 }
 
 .video-background iframe {
@@ -57,18 +87,36 @@ header {
     min-height: 100vh;
     min-width: 177vh;
     transform: translate(-50%, -50%);
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 /* --- Project Hero (full-width video background) --- */
+.project-snapshot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0; /* vertical spacing above/below the video box */
+    background: transparent;
+    z-index: 0;
+}
 .project-hero {
     display: flex;
     flex-direction: column;
-    /*height: 100vh; /* try to fit one screen (video + text) */
+    height: 100vh; /* try to fit one screen (video + text) */
     min-height: 520px;
     overflow: hidden;
     padding: 0;
     margin: 0;
+}
+.project-header-bar {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0.5rem 1rem;
+    z-index: 0;
+    margin: 2rem auto 3rem auto;
+    max-width: 1280px;
 }
 
 .project-video-wrap {
@@ -103,12 +151,12 @@ header {
     inset: 0;
     background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.02) 40%, rgba(0,0,0,0.04) 100%);
     z-index: 1;
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 0;
     display: block;
     padding-top: 0.5rem; /* gap between video and text */
 }
@@ -126,7 +174,7 @@ header {
 .hero-text p { color: inherit; opacity: 0.95; }
 
 .hero-text h1 {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     margin-bottom: 0.75rem;
 }
 
@@ -212,7 +260,6 @@ header {
 
 .gallery-project-title {
     box-sizing: border-box;
-    /*font-family: 'Montserrat';*/
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -592,7 +639,7 @@ footer {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 .dev-overlay-text {
@@ -646,6 +693,11 @@ footer {
 
 /* --- Tighten spacing between header, synopsis and main video --- */
 /* Reduce vertical padding to ~40% of .section (6rem -> 2.4rem) so gaps are ~60% smaller */
+
+#project-synopsis {
+    margin-top: 3rem;
+    position: relative;
+}
 
 header,
 #project-synopsis,

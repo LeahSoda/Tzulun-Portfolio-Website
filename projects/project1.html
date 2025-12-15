@@ -20,23 +20,23 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Echoes of Motion</h1>
-                <p class="hero-text">Can movement become a language of creation?
+                <p class="hero-text">How can movement become a medium through which people think, explore, and create?
                 </p>
             </div>
 
             <div class="section">
                 <!-- Project Video (main hero embed) -->
-                <section id="project-video-wrap" class="section intention visible">
-                    <div class="container">
+                <!--<section id="project-video-wrap" class="section intention visible">-->
                         <div class="project-video-wrap">
                             <iframe
-                                src="https://player.vimeo.com/video/1126703578?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                src="https://player.vimeo.com/video/1146517502?&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                                 frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-                                allow="autoplay; fullscreen; picture-in-picture" title="Echoes of Motion preview">
+                                allow="autoplay; fullscreen; picture-in-picture" 
+                                title="Echoes of Motion preview"
+                                style="cursor: pointer;">
                             </iframe>
                         </div>
-                    </div>
-                </section>
+                <!--</section>-->
                 <div class="hero-meta">
                     <p>2025 | Personal Research Project</p>
                 </div>
@@ -54,14 +54,13 @@
                     Each interaction forms a feedback loop: the body influences the system, and the system responds by sketching back. Through this reciprocal exchange, movement becomes a visible trace of perception, revealing how humans learn, adapt, and sense through motion.
                 </p>
             </div>
-            <div class="section">
+            <div>
                 <figure class="collage-item">
                     <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif"
                         alt="echoes of motion">
                 </figure>
                 <figcaption class="research-caption">Early development: Gestural input and ink-like response forming a continuous feedback loop.</figcaption>
-
-                </div>
+            </div>
             </div>
         </div>
 
@@ -300,16 +299,11 @@
         <p class=" design-paragraph">
             <strong>Sensing → Interpretation → Rendering</strong>
         </p>
-        <p class=" design-paragraph">
+        <p class="design-paragraph">
             <strong>Sensing </strong>captures bodily movement from the environment.
-        </p>
-        <p class="design-paragraph">
             <strong>Interpretation</strong> translates expressive qualities of gesture into interaction states through custom-defined logic.
-        </p>
-        <p class="design-paragraph">
             <strong>Rendering</strong> maps interpreted states into real-time visual behaviors that respond back to the user.
-        </p>
-        <p class="design-paragraph">Together, these layers form a continuous feedback loop between human motion and the spatial interface.</p>
+            Together, these layers form a continuous feedback loop between human motion and the spatial interface.</p>
         
 
         <!-- A) System Overview (Diagram-first, two-column) -->
@@ -407,40 +401,6 @@
         </div>
         </div>
 
-        <!-- B) 3-Stage Pipeline Modules (image-heavy, consistent with Development) -->
-        <h3 style="text-align:left; width:100%; max-width: 820px; margin-top: 2.25rem;">
-        Pipeline: Sensing → Interpretation → Rendering
-        </h3>
-
-        <div class="dev-thumbs">
-        <!-- Stage 1 -->
-        <figure class="dev-thumb">
-            <img src="../assets/demo/interaction/InteractionDesign-hand-control.png"
-            alt="Gesture sensing: hand tracking capture">
-            <figcaption class="dev-caption">
-            <strong>Sensing</strong>: Mediapipe tracks keypoints and hand state in real time.
-            </figcaption>
-        </figure>
-
-        <!-- Stage 2 -->
-        <figure class="dev-thumb">
-            <img src="../assets/demo/interaction/openess-definition.png"
-            alt="Feature interpretation: openness and motion metrics">
-            <figcaption class="dev-caption">
-            <strong>Interpretation</strong>: compute features (openness, velocity, rhythm, hesitation).
-            </figcaption>
-        </figure>
-
-        <!-- Stage 3 -->
-        <figure class="dev-thumb">
-            <img src="../assets/demo/real-time-ink-effect-dev.gif"
-            alt="Rendering: GLSL ink diffusion behavior">
-            <figcaption class="dev-caption">
-            <strong>Rendering</strong>: map features into GLSL ink diffusion + color dynamics.
-            </figcaption>
-        </figure>
-        </div>
-
         <p class="dev-paragraph">
         Feature signals are streamed via OSC into TouchDesigner, where they drive shader parameters controlling ink
         <strong>propagation</strong>, <strong>diffusion</strong> (wetness), <strong>flow bias</strong> (gradient field),
@@ -448,18 +408,23 @@
         </p>
 
         <!-- C) Mapping (Feature → Visual Behavior) -->
-        <h3 style="text-align:left; width:100%; max-width: 820px; margin-top: 2.25rem;">
-        Feature Mapping (Gesture → Ink Behavior)
+        <h3>
+            Feature Mapping (Gesture → Ink Behavior)
         </h3>
 
         <div class="research-grid" style="margin-top: 1rem;">
-        <figure class="research-item">
-            <img src=""
-            alt="Mapping openness to brush activation">
-            <figcaption class="research-caption">
-            <strong>Hand openness</strong> → brush activation / ink injection
-            </figcaption>
-        </figure>
+            <div>
+                 <div class="feature-gif">
+                    <figure class="research-item">
+                        <img src="../assets/demo/interaction/Tech-Map-01.gif"
+                        alt="Mapping openness to brush activation">
+                    </figure>
+                </div>
+                <figcaption class="research-caption">
+                            <strong>Hand openness</strong> → brush activation
+                </figcaption>
+            </div>
+           
 
         <figure class="research-item">
             <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif"
@@ -487,11 +452,10 @@
 
             <!-- A) Full-width development reel -->
             <div class="dev-video-wrap">
-                <video class="dev-video" autoplay muted loop playsinline preload="metadata"
-                    poster="../assets/image/dev-poster.jpg">
-                    <source src="../assets/video/development_clip.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/interaction/Dev-title-img.gif" alt="Static brush color baseline">
+                    <figcaption class="dev-caption">Noise-based brush color generation</figcaption>
+                </figure>
 
                 <div class="dev-overlay" aria-hidden="true">
                     <div class="dev-overlay-text">Real-time response latency &lt; 0.1s</div>
@@ -500,9 +464,7 @@
 
             <!-- Development framing -->
             <p class="dev-paragraph">
-                This section documents how the system evolved through iterative Approachs. Each iteration follows a
-                research-through-making loop: identifying a problem, testing variations, observing interaction qualities,
-                and making a design decision.
+                Iterations, prototypes, and plenty of early mistakes. Each experiment nudged the system a little closer to a fluid, expressive interaction.
             </p>
 
             <!-- =========================================================
@@ -512,27 +474,28 @@
                 <h3 class="iteration-title">Iteration 01 — Noise-Modulated Color Field</h3>
 
                 <div class="iteration-callout">
-                    <p><strong>Problem:</strong> Static color felt decorative and disconnected from gesture dynamics.</p>
-                    <p><strong>Approach:</strong> Modulated RGB channels using noise-driven masks to introduce non-repeating variation.</p>
+                    <p><strong>Approach:</strong> Using RGB masks driven by simplex noise to let color drift and fluctuate, allowing each stroke to carry subtle unpredictability and material presence.</p>
                     <p><strong>Result:</strong> Noise modulation added brush stroke color variation, resulting a more stochastic ink selection. This gave more color depth variation for diffusion.”</p>
                 </div>
             </div>
 
             <div class="dev-thumbs">
                 <figure class="dev-thumb">
-                    <img src="../assets/demo/development/color_static.gif" alt="Static brush color baseline">
-                    <figcaption class="dev-caption">Before: fixed brush color</figcaption>
+                    <img src="../assets/demo/interaction/Dev-Brush-01.gif" alt="Static brush color baseline">
+                    <figcaption class="dev-caption">Noise-based brush color generation</figcaption>
                 </figure>
 
                 <figure class="dev-thumb">
-                    <img src="../assets/demo/development/color_noise_rgb_mask.gif" alt="Noise-modulated RGB mask color dynamics">
-                    <figcaption class="dev-caption">After: noise-modulated RGB masking</figcaption>
+                    <img src="../assets/demo/interaction/Dev-Color-02.gif" alt="Close-up of pigment-like color variation">
+                    <figcaption class="dev-caption">Local pigment variation</figcaption>
                 </figure>
 
                 <figure class="dev-thumb">
-                    <img src="../assets/demo/development/color_detail.gif" alt="Close-up of pigment-like color variation">
-                    <figcaption class="dev-caption">Detail: local pigment variation within a stroke</figcaption>
+                    <img src="../assets/demo/interaction/Dev-Color-01.gif" alt="Noise-modulated RGB mask color dynamics">
+                    <figcaption class="dev-caption">RGB masking for brush color</figcaption>
                 </figure>
+
+              
             </div>
 
             <!-- =========================================================
@@ -551,17 +514,17 @@
 
             <div class="dev-thumbs">
                 <figure class="dev-thumb">
-                    <img src="../assets/demo/development/ink_fast_wet.gif" alt="Fast spread wet ink behavior">
+                    <img src="../assets/demo/interaction/Dev-Ink-01-1.gif" alt="Fast spread wet ink behavior">
                     <figcaption class="dev-caption">Variant A: fast propagation + high wetness</figcaption>
                 </figure>
 
                 <figure class="dev-thumb">
-                    <img src="../assets/demo/development/ink_slow_bloom.gif" alt="Slow bloom delayed ink behavior">
+                    <img src="../assets/demo/interaction/Dev-Ink-01-2.gif" alt="Slow bloom delayed ink behavior">
                     <figcaption class="dev-caption">Variant B: delayed propagation (slow bloom)</figcaption>
                 </figure>
 
                 <figure class="dev-thumb">
-                    <img src="../assets/demo/development/ink_dry_edge.gif" alt="Dry edge crisp ink behavior">
+                    <img src="../assets/demo/interaction/Dev-Ink-01-3.gif" alt="Dry edge crisp ink behavior">
                     <figcaption class="dev-caption">Variant C: low wetness (crisp edges)</figcaption>
                 </figure>
             </div>
@@ -576,35 +539,45 @@
                 Iteration 03 — Stabilizing Z-Depth Sensing (Kalman Filter)
             ========================================================== -->
             <div class="iteration-block">
-                <h3 class="iteration-title">Iteration 03 — Stabilizing Z-Depth Sensing (Kalman Filter)</h3>
+                <h3 class="iteration-title">Iteration 03 — Sensing Stabilization & More Interactive Gesture Mapping </h3>
 
                 <div class="iteration-callout">
-                    <p><strong>Problem:</strong> Mediapipe and Webcam-based depth input was noisy, causing unstable thresholds and flickering triggers.</p>
-                    <p><strong>Approach:</strong> Applied a Kalman filter to smooth Z-depth measurements and maintain a predictive state estimate.</p>
-                    <p><strong>Result:</strong> Smoothing reduced jitter and improved the reliability of approach/retreat detection. The improved sensing stability preserved a fluid, non-distracting interaction.</p>
+                    <p><strong>Problem:</strong>The interaction lacked fluidity for two reasons.
+                        First, webcam-based Z-depth sensing was noisy, causing unstable approach and retreat detection.
+                        Second, the interaction vocabulary was limited to triggering and dragging within a single brush, restricting expressive control.</p>
+                    <p><strong>Experiment:</strong> I addressed sensing stability and interaction expressivity in parallel.
+                        To stabilize depth input, I applied a Kalman filter to smooth noisy Z-depth measurements and maintain a predictive state estimate.
+                        To expand gestural control, I introduced additional gesture interpretations beyond basic triggering, including approach/retreat, hand openness, and hand rotation.</p>
+                    <p><strong>Observation</strong> Depth smoothing significantly reduced jitter and improved the reliability of proximity-based interaction.
+                        At the same time, mapping multiple gesture attributes created richer, more continuous control: hand openness naturally modulated stroke size, while rotation influenced brush orientation.
+                        These mappings encouraged users to explore variation within a single gesture rather than switching between discrete modes.</p>
                 </div>
             </div>
 
-            <div class="dev-thumbs">
-            <figure class="dev-thumb">
-                <img src="../assets/demo/development/z_depth_jitter_before.gif" alt="Noisy z-depth input causing jitter">
-                <figcaption class="dev-caption">Before: noisy Z-depth → unstable response</figcaption>
-            </figure>
-
-            <figure class="dev-thumb">
-                <img src="../assets/demo/interaction/z_smoothing_kalman_filter.png" alt="Kalman filter smoothing plot">
-                <figcaption class="dev-caption">Evidence: Kalman filtering reduces jitter</figcaption>
-            </figure>
-
-            <figure class="dev-thumb">
-                <img src="../assets/demo/development/z_depth_after.gif" alt="Smoothed z-depth input after filtering">
-                <figcaption class="dev-caption">After: stabilized depth + prediction</figcaption>
-            </figure>
+            <div class="section">
+                <figure>
+                    <img src="../assets/demo/interaction/z_smoothing_kalman_filter.png" alt="Kalman filter smoothing plot">
+                    <figcaption class="dev-caption">Smoothing z-depth noise with Kalman filter avoids jitter in approach/retreat detection with webcam</figcaption>
+                </figure>
             </div>
 
+            <div class="section">
+                <h3 class="iteration-title">Different Variations </h3>
+                <figure class="dev-thumbs-large">
+                    <img src="../assets/demo/interaction/Dev-Sense-02.gif" alt="Variation in hand control and rotation">
+                    <figcaption class="dev-caption">Variant A: variation in hand control and rotation</figcaption>
+                </figure>
+                <figure class="dev-thumbs-large">
+                    <img src="../assets/demo/interaction/Dev-Sense-03.gif" alt="Variation in ink responsiveness">
+                    <figcaption class="dev-caption">Variant B: ink difussion retain and responsiveness</figcaption>
+                </figure>
+
+
+            </div>
             <!-- Synthesis -->
             <p class="dev-paragraph">
-            Together, these iterations shaped the system into a more stable, expressive feedback loop.
+            By combining sensing stabilization with expanded gesture mapping, interaction becomes fluid, layered, and responsive to subtle bodily variation.
+                Together, these iterations shaped the system into a more stable, expressive feedback loop.
             </p>
 
         </div>

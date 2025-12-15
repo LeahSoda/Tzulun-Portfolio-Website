@@ -44,6 +44,7 @@ header {
 .collage-item {
     display: flex;
     flex-direction: column;
+    width:100%;
 }
 .caption {
     display: block;
@@ -142,10 +143,9 @@ header {
 .project-video-wrap>img,
 .project-video-wrap iframe,
 .project-video {
-    width: min(1280px, 100%);
-    /* Vimeo-like max width */
+    width: 100%;
+    max-width: 1000px;
     aspect-ratio: 16 / 9;
-    /* keep 16:9 box */
     height: auto;
     display: block;
     border-radius: 8px;
@@ -245,6 +245,21 @@ header {
     .project-video-wrap {
         height: 50vh;
     }
+}
+
+.feature-gif {
+  
+  object-position: center 15%;
+  width: 100%;
+  overflow: hidden;     
+  height: 325px;         
+}
+
+.feature-gif img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
 }
 
 /* --- Section --- */
@@ -575,6 +590,7 @@ footer {
 
 .research-grid {
     display: grid;
+    max-width: 1000px;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     align-items: center;
@@ -583,7 +599,6 @@ footer {
 
 .research-item {
     background: #fff;
-    border-radius: 8px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -680,7 +695,6 @@ footer {
     color: #222;
     line-height: 1.7;
     text-align: left;
-    align-self: flex-start;
 }
 
 @media (max-width: 1000px) {
@@ -740,6 +754,14 @@ footer {
     text-align: left;
 }
 
+.dev-thumbs-large{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+    margin-bottom: 4em;
+    align-items: start;
+    text-align: center;
+}
 .dev-thumb img {
     width: 100%;
     height: 100%;
@@ -760,6 +782,14 @@ footer {
     max-width: 1000px;
     color: #222;
     line-height: 1.7;
+    text-align: left;
+}
+.dev-thumbs-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: start;
     text-align: left;
 }
 
@@ -856,6 +886,11 @@ header,
 /* Make the existing grid slightly tighter for notebook-like feel */
 .research-grid-compact {
   margin-top: 0;
+}
+
+.research-grid-compact .research-item img {
+  height: 280px;
+  object-fit: cover;
 }
 
 /* Optional: one wide item below the 2-up grid */

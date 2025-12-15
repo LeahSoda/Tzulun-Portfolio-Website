@@ -13,14 +13,6 @@
     <div id="navbar-placeholder"></div>
 
     <header>
-
-        <!--<div class="section">
-            <figure class="collage-item">
-                <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif"
-                    alt="echoes of motion">
-            </figure>
-        </div>
-    -->
     </header>
 
     <!-- Section 1: Project Intro (Hero / Synopsis) -->
@@ -33,12 +25,20 @@
             </div>
 
             <div class="section">
-                <figure class="collage-item">
-                    <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif"
-                        alt="echoes of motion">
-                </figure>
+                <!-- Project Video (main hero embed) -->
+                <section id="project-video-wrap" class="section intention visible">
+                    <div class="container">
+                        <div class="project-video-wrap">
+                            <iframe
+                                src="https://player.vimeo.com/video/1126703578?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+                                allow="autoplay; fullscreen; picture-in-picture" title="Echoes of Motion preview">
+                            </iframe>
+                        </div>
+                    </div>
+                </section>
                 <div class="hero-meta">
-                    <p>2025 | TouchDesigner, Python, Mediapipe, GLSL | Personal Project</p>
+                    <p>2025 | Personal Research Project</p>
                 </div>
 
             </div>
@@ -48,29 +48,25 @@
         <div class="container">
             <div id="project-synopsis" class="synopsis">
                 <p>
-                    Echoes of Motion transforms human gestures into living, real-time visuals that behave like responsive organisms.
-The system interprets motion not as a command, but as a fluid, adaptive language. It is driven by rhythm, hesitation, intention, and play.
-
-Each gesture enters a feedback loop: the body influences the system, and the system sketches back. Through this exchange, movement becomes a visible trace of perception and expression, revealing how humans learn, adapt, and sense through motion.
+                    Echoes of Motion is an interactive system that translates human gestures into living, real-time visuals on an architectural surface. Rather than treating movement as a command, the system interprets gesture as a fluid, adaptive language shaped by rhythm, hesitation, and intent.
+                </p>
+                <p>
+                    Each interaction forms a feedback loop: the body influences the system, and the system responds by sketching back. Through this reciprocal exchange, movement becomes a visible trace of perception, revealing how humans learn, adapt, and sense through motion.
                 </p>
             </div>
-        </div>
+            <div class="section">
+                <figure class="collage-item">
+                    <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif"
+                        alt="echoes of motion">
+                </figure>
+                <figcaption class="research-caption">Early development: Gestural input and ink-like response forming a continuous feedback loop.</figcaption>
 
-        </div>
-
-    </section>
-
-    <!-- Project Video (main hero embed) -->
-    <section id="project-video-wrap" class="section intention visible">
-        <div class="container">
-            <div class="project-video-wrap">
-                <iframe
-                    src="https://player.vimeo.com/video/1126703578?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-                    allow="autoplay; fullscreen; picture-in-picture" title="Echoes of Motion preview">
-                </iframe>
+                </div>
             </div>
         </div>
+
+        </div>
+
     </section>
 
     <!-- Section 2: Intention -->
@@ -79,129 +75,421 @@ Each gesture enters a feedback loop: the body influences the system, and the sys
             <div class="intention-text">
                 <h2>Intention</h2>
                 <p>
-                    Echoes of Motion began with a question: How can movement function not only as force, but as a language of creation?
+                    Echoes of Motion began with a question:
+                    How can an environment recognize when a person is ready to interact—before any explicit command is given?
                 </p>
                 <p>
-                    The inspiration emerges from dance, where gesture operates simultaneously as expression and interaction. Drawing from embodied cognition and ecological perception, I approach movement not as a tool for control but as a form of sensing—a way humans understand and respond to dynamic environments.
+                    In everyday life, humans rarely initiate interaction through precise instructions. Instead, we signal readiness through the body by turning toward a space, slowing down, making eye contacts, or raising a hand. From greeting a passerby to engaging with a responsive environment, interaction often begins as an embodied invitation rather than a deliberate control action.
                 </p>
                 <p>
-                    I’m interested in motion as a way of interacting with space, as a direct and intuitive form of communication between humans and their surroundings. With Echoes of Motion, I explore how a blank wall can be reshaped into a responsive interface, shifting interaction away from personal screens and back into the shared environment. Much like the instinctive creativity of childhood—when drawing on walls felt natural, exploratory, and free—the project revives that sense of playful engagement through computational means.
+                    The project situates this question within the architectural context of a wall. Walls are among the most familiar spatial boundaries in human environments. They separate spaces, regulate access, and quietly signal where interaction is not expected to occur. In cities especially, shared walls line streets and public corridors. They are present, visible, yet rarely addressed as interactive surfaces.</p>
+                <p>
+                    Echoes of Motion asks what might happen if a wall were no longer treated solely as a boundary, but as an interface. By transforming a static wall into a responsive surface, the project explores how an architectural divider might become a site of connection rather than separation. Interaction shifts away from personal screens and toward shared spatial experience, inviting passersby to engage with a surface they would normally ignore or avoid.
                 </p>
                 <p>
-                    In Echoes of Motion, each gesture initiates a conversation with the system. Instead of treating motion as positional input, the system detects expressive features in motion, namely continuity, hesitation, and rhythm, and responds with evolving visual behavior. This exchange creates a feedback loop in which the human and the computational system continuously adapt to one another, transforming the wall into a dynamic canvas that listens and sketches back.
-                </p>
-                <p>
-                    Through this dialogue, Echoes of Motion examines how movement can become a language that emerges through interaction rather than instruction. The project seeks to reveal how intuitive expression can shape real-time computational environments, and how technology can echo the perceptual and emotional traces embedded in human motion while extending them into the surrounding space.
+                    Drawing inspiration from everyday gestures, the project treats movement not only as expressive output, but as a language through which humans communicate readiness, curiosity, and engagement with their surroundings. In this context, the wall becomes an active participant—sensing bodily cues and responding in ways that feel intuitive rather than instructed.
                 </p>
             </div>
+            <!-- Concept Diagram -->        
+             <svg class="concept-diagram" width="720" height="280" viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg">
 
-            <div class="intention-collage">
-                <figure class="collage-item">
-                    <img src="../assets/demo/interaction/InteractionDesign-hand-control.png" alt="Gesture capture">
-                    <figcaption class="caption">Gesture exploration</figcaption>
-                </figure>
+            <!-- LEFT: Wall as Boundary -->
+            <line x1="170" y1="48" x2="170" y2="212" class="wall"/>
 
-                <!-- <figure class="collage-item">
-                    <img src="../assets/image/demo-img.jpg" alt="Projection test">
-                    <figcaption class="caption">Projection test</figcaption>
-                </figure>
-            -->
+            <!-- Left figure (standing) -->
+            <circle cx="94" cy="86" r="7" class="figure-head"/>
+            <path d="M84 152 C84 136, 88 118, 94 110 C100 118, 104 136, 104 152 C104 160, 100 168, 94 168 C88 168, 84 160, 84 152 Z"
+                    class="figure-body"/>
+            <path d="M90 168 L84 196 L94 196 L98 168 Z" class="figure-leg"/>
+            <path d="M98 168 L94 196 L104 196 L106 168 Z" class="figure-leg"/>
 
-                <figure class="collage-item">
-                    <img src="../assets/demo/real-time-ink-effect-dev.gif"
-                        alt="Ink diffusion trail driven by hand movement">
-                    <figcaption class="caption">Ink diffusion trail driven by hand movement</figcaption>
-                </figure>
+            <!-- Left labels -->
+            <text x="170" y="236" class="label">Wall as Boundary</text>
+            <text x="170" y="254" class="text">Separation</text>
+            <text x="170" y="270" class="sub">No interaction expected</text>
+
+            <!-- CENTER: Transition -->
+            <line x1="270" y1="130" x2="460" y2="130" class="line"/>
+            <polyline points="450,124 460,130 450,136" class="line"/>
+            <text x="365" y="110" class="text">Reframing Interaction State</text>
+
+            <!-- RIGHT: Wall as Interface -->
+            <line x1="580" y1="48" x2="580" y2="212" class="wall"/>
+
+            <!-- Right figure (standing + waving) -->
+            <circle cx="538" cy="86" r="7" class="figure-head"/>
+            <path d="M528 152 C528 136, 532 118, 538 110 C544 118, 548 136, 548 152 C548 160, 544 168, 538 168 C532 168, 528 160, 528 152 Z"
+                    class="figure-body"/>
+            <path d="M534 168 L528 196 L538 196 L542 168 Z" class="figure-leg"/>
+            <path d="M542 168 L538 196 L548 196 L550 168 Z" class="figure-leg"/>
+
+            <!-- Arms -->
+            <path d="M532 122 L520 106" class="gesture-arm"/>
+            <path d="M544 122 L556 106" class="gesture-arm"/>
+
+            <!-- Waving arcs -->
+            <path d="M514 98 C508 104, 508 112, 514 118" class="gesture-wave"/>
+            <path d="M508 96 C500 104, 500 114, 508 122" class="gesture-wave"/>
+            <path d="M562 98 C568 104, 568 112, 562 118" class="gesture-wave"/>
+            <path d="M568 96 C576 104, 576 114, 568 122" class="gesture-wave"/>
+
+            <!-- Right labels -->
+            <text x="580" y="236" class="label">Wall as Interface</text>
+            <text x="580" y="254" class="text">Invitation</text>
+            <text x="580" y="270" class="sub">Shared engagement</text>
+            </svg>
+
+
+            <!-- Research Questions (Centered block) -->
+            <div class="research-questions">
+                <p class="rq">
+                    How can an interactive system recognize a user's readiness for interaction without requiring explicit commands?
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: Research  -->
+    <!-- Section 3: Research & Inquiry  -->
     <section id="project-research" class="section research-section visible">
         <div class="container">
-            <h2>Research</h2>
 
+            <h2>Research &amp; Inquiry</h2>
             <p class="research-intro">
-                The research phase explored motion as data. Early prototypes tested gesture tracking, openness
-                mapping, and OSC data transfer to understand how physical motion could drive generative behavior.
+                I approached the wall as a spatial interface and asked how gesture might function as sensing rather than control. Rather than treating interaction as a sequence of commands, I was interested in how a system could detect a user’s readiness to engage.
             </p>
 
-            <div class="research-grid">
-                <figure class="research-item">
-                    <img src="../assets/demo/interaction/openess-definition.png"
-                        alt="Refining palm openess with mediapipe">
-                    <figcaption class="research-caption">Define palm openness control with mediapipe.</figcaption>
-                </figure>
+            <div class="container">
+            <h3>Gesture as Readiness</h3>
 
-                <figure class="research-item">
-                    <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif"
-                        alt="ink diffusion triggered by open palm">
-                    <figcaption class="research-caption">Mapping open palm action to trigger digital ink</figcaption>
+            <div class="intention">
+                <div class="intention-text">
+                    <p>
+                        In human communication, certain gestures function less as explicit commands and more as signals of readiness and intent. An open palm, for example, commonly appears in moments of greeting, pause, or hesitation. Rather than prescribing a specific action, it communicates availability, caution, or a desire to regulate engagement.
+                    </p>
+                    <p>
+                        Across everyday interactions as well as their representations in media, such gestures often mark transitions in interaction states. They appear at moments when an encounter is about to begin, shift, or momentarily stop. What is communicated is not instruction, but presence: an indication that interaction is possible, negotiable, or being recalibrated.
+                    </p>
+                    <p>Drawing from perspectives in embodied interaction and social signaling, I interpret the open palm not as a control gesture, but as an example of a broader class of readiness signals. These gestures carry ambiguity by design, allowing participants to modulate interaction without committing to a predefined outcome. This quality makes them particularly relevant for designing open-ended, exploratory interaction systems, where sensing readiness and intent matters more than recognizing explicit commands.</p>
+                </div>
+                <figure>
+                   <!-- Gesture as Readiness: shared cues with multiple participants + open palm -->
+                    <svg class="concept-diagram gesture-diagram" width="720" height="300" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- Title -->
+                    <text x="360" y="34" class="label">Gesture as Readiness</text>
+
+                    <!-- LEFT GROUP (kept minimal) -->
+                    <circle cx="120" cy="92" r="7" class="figure-head"/>
+                    <path d="M110 158 C110 142, 114 124, 120 116 C126 124, 130 142, 130 158
+                            C130 166, 126 174, 120 174 C114 174, 110 166, 110 158 Z" class="figure-body"/>
+                    <path d="M116 174 L110 202 L120 202 L124 174 Z" class="figure-leg"/>
+                    <path d="M124 174 L120 202 L130 202 L132 174 Z" class="figure-leg"/>
+
+                    <circle cx="175" cy="92" r="7" class="figure-head"/>
+                    <path d="M165 158 C165 142, 169 124, 175 116 C181 124, 185 142, 185 158
+                            C185 166, 181 174, 175 174 C169 174, 165 166, 165 158 Z" class="figure-body"/>
+                    <path d="M171 174 L165 202 L175 202 L179 174 Z" class="figure-leg"/>
+                    <path d="M179 174 L175 202 L185 202 L187 174 Z" class="figure-leg"/>
+
+                    <!-- CENTER: Transition -->
+                    <line x1="290" y1="140" x2="420" y2="140" class="line"/>
+                    <polyline points="410,134 420,140 410,146" class="line"/>
+                    <text x="355" y="122" class="text">Shared cues</text>
+                    <text x="355" y="158" class="sub">signal a state change</text>
+
+                    <!-- RIGHT GROUP: in front of wall -->
+                    <!-- Figure 2: Wave (entering / invitation) -->
+                    <circle cx="485" cy="92" r="7" class="figure-head"/>
+                    <path d="M475 158 C475 142, 479 124, 485 116 C491 124, 495 142, 495 158
+                            C495 166, 491 174, 485 174 C479 174, 475 166, 475 158 Z" class="figure-body"/>
+                    <path d="M481 174 L475 202 L485 202 L489 174 Z" class="figure-leg"/>
+                    <path d="M489 174 L485 202 L495 202 L497 174 Z" class="figure-leg"/>
+
+                    <path d="M489 132 L503 112" class="gesture-arm"/>
+                    <path d="M509 102 C519 108, 519 122, 509 128" class="gesture-wave"/>
+                    <path d="M515 98 C528 108, 528 126, 515 136" class="gesture-wave"/>
+
+                    <!-- Figure 3: Open Palm (readiness / boundary-capable) -->
+                    <circle cx="540" cy="92" r="7" class="figure-head"/>
+                    <path d="M530 158 C530 142, 534 124, 540 116 C546 124, 550 142, 550 158
+                            C550 166, 546 174, 540 174 C534 174, 530 166, 530 158 Z" class="figure-body"/>
+                    <path d="M536 174 L530 202 L540 202 L544 174 Z" class="figure-leg"/>
+                    <path d="M544 174 L540 202 L550 202 L552 174 Z" class="figure-leg"/>
+
+                    <!-- raised arm -->
+                    <path d="M536 132 L522 114" class="gesture-arm"/>
+                    <!-- open palm mark near hand (minimal silhouette) -->
+                    <rect x="512" y="104" width="12" height="16" rx="3" class="icon-fill"/>
+                    <!-- optional boundary hint (very subtle) -->
+                    <line x1="506" y1="206" x2="562" y2="206" class="line"/>
+
+                    <!-- WALL -->
+                    <line x1="600" y1="70" x2="600" y2="220" class="wall"/>
+
+                    <!-- Environmental response traces -->
+                    <path d="M615 110 C630 100, 645 100, 660 110" class="line"/>
+                    <path d="M615 150 C630 140, 645 140, 660 150" class="line"/>
+                    <path d="M615 190 C630 180, 645 180, 660 190" class="line"/>
+
+                    <!-- Labels -->
+                    <text x="160" y="246" class="text">Shared gestures form a common interaction language</text>
+                    <text x="160" y="266" class="sub">readiness · invitation · boundary</text>
+
+                    <text x="600" y="246" class="label">Shared Surface</text>
+                    <text x="600" y="266" class="sub">environment responds to human presence</text>
+                    </svg>
+
                 </figure>
             </div>
-
-            <!--
-            <div>
-                <figure class="research-item">
-                <img src="../assets/image/research-latency.jpg" alt="Early latency test using OSC data stream">
-                <figcaption class="research-caption">Early latency test using OSC data stream.</figcaption>
-                </figure>
-            -->
-            <figure class="research-item">
-                <img src="../assets/demo/interaction/system-architechture.png" alt="System architecture diagram">
-                <figcaption class="research-caption">System architecture diagram connecting input and shader response.
-                </figcaption>
-            </figure>
         </div>
+            <!-- 3.1 Result (Full-width visual evidence) -->
+            <figure class="research-hero">
+            <img src="../assets/demo/interaction/InteractionDesign-hand-control.png"
+                alt="Result of gesture exploration in space">
+            <figcaption class="research-caption">
+                Spontaneous hand movement and interaction exploration before defining mappings.
+            </figcaption>
+            </figure>
 
+            <!-- 3.2 Conceptual Frame (Two-column: left visuals, right text) -->
+            <div class="research-two-col">
+                <!-- LEFT: Visual evidence / sketches / traces -->
+                <div class="research-left">
+                    <div class="research-grid research-grid-compact">
+                    <figure class="research-item">
+                        <img src="../assets/demo/interaction/openess-definition.png"
+                            alt="Refining palm openness with Mediapipe">
+                        <figcaption class="research-caption">Feature study: defining palm openness with Mediapipe.</figcaption>
+                    </figure>
+
+                    <figure class="research-item">
+                        <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif"
+                            alt="Ink diffusion triggered by open palm">
+                        <figcaption class="research-caption">Early mapping: open palm gesture → ink trigger.</figcaption>
+                    </figure>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Text framing -->
+                <div class="research-right">
+                    <h3>Conceptual Frame</h3>
+                    <p>
+                        Echoes of Motion draws from <strong>embodied interaction</strong> and <strong>ecological perception</strong>,
+                        treating movement as a form of sensing—continuous, expressive, and context-dependent—rather than a discrete command.
+                        Gesture becomes both expression and perception, shaped by rhythm, hesitation, and attention.
+                    </p>
+
+                    <h3>From Result to Questions</h3>
+                    <p>
+                        The prototypes above helped me identify which qualities of movement feel meaningful in interaction,
+                        and how a wall might respond as an active partner in a shared environment.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Section 4: Design -->
+    <!-- Section 4: Technical Approach -->
     <section id="project-design" class="section design-section visible">
-        <div class="container">
-            <h2>Technical Approach</h2>
-            <p>
-                Echoes of Motion translates hand and body movement into a generative visual system through a three-layer pipeline: sensing movement, interpreting its expressive qualities, and visualizing its relationship with computational feedback.
+    <div class="container">
+        <h2>Technical Approach</h2>
+
+        <p class="design-paragraph">
+            To explore how an environment might recognize readiness for interaction, I designed a three-layer pipeline that treats gesture not as a command, but as a signal of intent.
+        </p>
+        <p class=" design-paragraph">
+            <strong>Sensing → Interpretation → Rendering</strong>
+        </p>
+        <p class=" design-paragraph">
+            <strong>Sensing </strong>captures bodily movement from the environment.
+        </p>
+        <p class="design-paragraph">
+            <strong>Interpretation</strong> translates expressive qualities of gesture into interaction states through custom-defined logic.
+        </p>
+        <p class="design-paragraph">
+            <strong>Rendering</strong> maps interpreted states into real-time visual behaviors that respond back to the user.
+        </p>
+        <p class="design-paragraph">Together, these layers form a continuous feedback loop between human motion and the spatial interface.</p>
+        
+
+        <!-- A) System Overview (Diagram-first, two-column) -->
+        <div class="design-grid">
+        <!-- Left: Diagram -->
+        <div class="system-diagram">
+        
+            <!-- System Architecture Diagram + Pipeline states -->
+            
+            <svg class="concept-diagram system-diagram" width="880" height="320" viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg">
+            <!-- STATE BOUNDARIES (dotted) -->
+            <!-- Sensing -->
+            <rect x="26" y="76" width="178" height="120" rx="16" class="state sensing"/>
+            <text x="38" y="70" class="state-label sensing">Sensing</text>
+
+            <!-- Interpretation -->
+            <rect x="226" y="66" width="628" height="150" rx="18" class="state interpreting"/>
+            <text x="238" y="60" class="state-label interpreting">Interpretation</text>
+
+            <!-- Rendering (moved slightly down + taller for equal top/bottom spacing) -->
+            <rect x="748" y="214" width="128" height="88" rx="16" class="state rendering"/>
+            <text x="760" y="300" class="state-label rendering">Rendering</text>
+
+            <!-- Webcam -->
+            <rect x="40" y="92" width="150" height="86" rx="12" class="frame"/>
+            <g class="icon camera-icon">
+                <rect x="58" y="112" width="30" height="20" rx="4"/>
+                <rect x="64" y="108" width="10" height="5" rx="2"/>
+                <circle cx="73" cy="122" r="5"/>
+                <circle cx="73" cy="122" r="2.2"/>
+            </g>
+            <text x="125" y="132" class="text">Webcam</text>
+            <text x="125" y="154" class="sub">hand data capturing</text>
+
+            <!-- Python -->
+            <rect x="240" y="84" width="170" height="102" rx="12" class="frame"/>
+            <text x="325" y="130" class="text">Python</text>
+            <text x="325" y="154" class="sub">gesture parsing</text>
+
+            <!-- TouchDesigner -->
+            <rect x="540" y="70" width="300" height="136" rx="14" class="frame"/>
+            <text x="690" y="94" class="text">TouchDesigner</text>
+
+            <rect x="560" y="110" width="160" height="76" rx="10" class="frame"/>
+            <text x="640" y="142" class="sub">mapping</text>
+            <text x="640" y="162" class="sub">interaction loop</text>
+
+            <rect x="735" y="110" width="90" height="76" rx="10" class="frame"/>
+            <text x="780" y="146" class="sub">GLSL</text>
+            <text x="780" y="166" class="sub">ink diffusion</text>
+
+            <!-- Noise-based brush texture hint -->
+            <path d="M744 176 C752 170, 760 182, 768 176 C776 170, 784 182, 792 176 C800 170, 808 182, 816 176"
+                    class="line" opacity="0.55"/>
+            <path d="M744 182 C752 176, 760 188, 768 182 C776 176, 784 188, 792 182 C800 176, 808 188, 816 182"
+                    class="line" opacity="0.35"/>
+
+            <!-- Callout -->
+            <text x="690" y="54" class="sub">interpret gesture state → visual behavior</text>
+            <line x1="690" y1="60" x2="690" y2="70" class="line"/>
+
+            <!-- Connections -->
+            <line x1="190" y1="135" x2="240" y2="135" class="line"/>
+            <polyline points="230,129 240,135 230,141" class="line"/>
+
+            <line x1="410" y1="135" x2="540" y2="135" class="line"/>
+            <polyline points="530,129 540,135 530,141" class="line"/>
+            <text x="475" y="112" class="mini-label">OSC channel</text>
+
+            <!-- Rendering Arrow (EXTENDED) -->
+            <!-- Start under GLSL box (bottom ~186), extend down to rendering box -->
+            <line x1="780" y1="186" x2="780" y2="234" class="line"/>
+            <polyline points="774,224 780,234 786,224" class="line"/>
+
+            <!-- Rendering box content: vertically centered -->
+            <!-- Use dominant-baseline=middle so it sits with equal top/bottom space -->
+            <text x="812" y="258" class="sub" text-anchor="middle" dominant-baseline="middle">projection</text>
+
+            <!-- Bottom texts: add more gap for balance -->
+            <text x="440" y="238" class="mini-label">Pipeline: Sensing → Interpretation → Rendering</text>
+            <text x="440" y="312" class="label">System Architecture</text>
+            </svg>
+
+        </div>
+
+        <!-- Short framing text -->
+        <div class="container" >
+            <h3>Why these features?</h3>
+            <p class="design-paragraph">
+                Instead of mapping raw position directly to visual output, the system interprets higher-level expressive qualities—such as rhythm, hesitation, and continuity—so interaction unfolds as an ongoing process rather than a discrete event.
             </p>
-
-            <div class="design-grid">
-                <!-- Left: System Diagram / Architecture Flow -->
-                <div class="system-diagram">
-                    <!-- Replace the image with an inline SVG animation if available -->
-                    <img src="../assets/image/system-architecture.svg"
-                        alt="System architecture diagram: Camera → Python → TouchDesigner → GLSL → Projection">
-
-                    <ul class="system-legend">
-                        <li><strong>Input:</strong> Hand tracking (Mediapipe)</li>
-                        <li><strong>Processing:</strong> Python → OSC → GLSL shader</li>
-                        <li><strong>Output:</strong> Ink diffusion + projection</li>
-                    </ul>
-                </div>
-
-            </div>
-            <p>
-                The system first captures hand movement through a web camera, and then extracts expressive features such as direction, continuity, and gesture, and maps them to parameters of a GLSL-based visual system.
-            </p>
-            <img src="../assets/image/system-architecture.svg"
-                        alt="System Architecture Diagram">
-
-            <p>
-               The resulting patterns form a feedback loop in which the system “sketches back,” inviting the participant to adjust their gestures. Through this ongoing exchange, movement gradually becomes a language of creation between human and machine. 
+            <p class="design-paragraph">
+                This approach allows the wall to follow the user’s embodied gestures over time, supporting open-ended exploration and improvisation through movement.
             </p>
         </div>
-   </section>
+        </div>
 
-    <!-- Section 5: Development -->
+        <!-- B) 3-Stage Pipeline Modules (image-heavy, consistent with Development) -->
+        <h3 style="text-align:left; width:100%; max-width: 820px; margin-top: 2.25rem;">
+        Pipeline: Sensing → Interpretation → Rendering
+        </h3>
+
+        <div class="dev-thumbs">
+        <!-- Stage 1 -->
+        <figure class="dev-thumb">
+            <img src="../assets/demo/interaction/InteractionDesign-hand-control.png"
+            alt="Gesture sensing: hand tracking capture">
+            <figcaption class="dev-caption">
+            <strong>Sensing</strong>: Mediapipe tracks keypoints and hand state in real time.
+            </figcaption>
+        </figure>
+
+        <!-- Stage 2 -->
+        <figure class="dev-thumb">
+            <img src="../assets/demo/interaction/openess-definition.png"
+            alt="Feature interpretation: openness and motion metrics">
+            <figcaption class="dev-caption">
+            <strong>Interpretation</strong>: compute features (openness, velocity, rhythm, hesitation).
+            </figcaption>
+        </figure>
+
+        <!-- Stage 3 -->
+        <figure class="dev-thumb">
+            <img src="../assets/demo/real-time-ink-effect-dev.gif"
+            alt="Rendering: GLSL ink diffusion behavior">
+            <figcaption class="dev-caption">
+            <strong>Rendering</strong>: map features into GLSL ink diffusion + color dynamics.
+            </figcaption>
+        </figure>
+        </div>
+
+        <p class="dev-paragraph">
+        Feature signals are streamed via OSC into TouchDesigner, where they drive shader parameters controlling ink
+        <strong>propagation</strong>, <strong>diffusion</strong> (wetness), <strong>flow bias</strong> (gradient field),
+        and <strong>color modulation</strong>. This supports material-like behavior while maintaining low latency.
+        </p>
+
+        <!-- C) Mapping (Feature → Visual Behavior) -->
+        <h3 style="text-align:left; width:100%; max-width: 820px; margin-top: 2.25rem;">
+        Feature Mapping (Gesture → Ink Behavior)
+        </h3>
+
+        <div class="research-grid" style="margin-top: 1rem;">
+        <figure class="research-item">
+            <img src=""
+            alt="Mapping openness to brush activation">
+            <figcaption class="research-caption">
+            <strong>Hand openness</strong> → brush activation / ink injection
+            </figcaption>
+        </figure>
+
+        <figure class="research-item">
+            <img src="../assets/demo/interaction/interactive_brush_triggered_by_hand_openness.gif"
+            alt="Mapping rhythm to diffusion timing">
+            <figcaption class="research-caption">
+            <strong>Rhythm &amp; continuity</strong> → propagation speed / bloom timing
+            </figcaption>
+        </figure>
+        </div>
+
+        
+        <p class="dev-paragraph">
+        These mappings were iterated through rapid prototyping: each feature was tested for stability, perceptual clarity,
+        and how well it invited exploration. The goal was not one-to-one control, but expressive coupling—where the wall’s
+        response remains interpretable yet surprising.
+        </p>
+
+    </div>
+    </section>
+
+    <!-- Section 5: Development (Iteration Ladder) -->
     <section id="project-development" class="section development-section visible">
         <div class="container">
             <h2>Development</h2>
 
+            <!-- A) Full-width development reel -->
             <div class="dev-video-wrap">
                 <video class="dev-video" autoplay muted loop playsinline preload="metadata"
                     poster="../assets/image/dev-poster.jpg">
                     <source src="../assets/video/development_clip.mp4" type="video/mp4">
-                    <!-- Fallback text -->
                     Your browser does not support the video tag.
                 </video>
 
@@ -210,73 +498,182 @@ Each gesture enters a feedback loop: the body influences the system, and the sys
                 </div>
             </div>
 
+            <!-- Development framing -->
+            <p class="dev-paragraph">
+                This section documents how the system evolved through iterative Approachs. Each iteration follows a
+                research-through-making loop: identifying a problem, testing variations, observing interaction qualities,
+                and making a design decision.
+            </p>
+
+            <!-- =========================================================
+                Iteration 01 — Noise-Modulated Color Field
+            ========================================================== -->
+            <div class="iteration-block">
+                <h3 class="iteration-title">Iteration 01 — Noise-Modulated Color Field</h3>
+
+                <div class="iteration-callout">
+                    <p><strong>Problem:</strong> Static color felt decorative and disconnected from gesture dynamics.</p>
+                    <p><strong>Approach:</strong> Modulated RGB channels using noise-driven masks to introduce non-repeating variation.</p>
+                    <p><strong>Result:</strong> Noise modulation added brush stroke color variation, resulting a more stochastic ink selection. This gave more color depth variation for diffusion.”</p>
+                </div>
+            </div>
+
             <div class="dev-thumbs">
                 <figure class="dev-thumb">
-                    <img src="../assets/image/dev-touchdesigner.png"
-                        alt="TouchDesigner network view - data flow patch graph">
-                    <figcaption class="dev-caption">Data flow patch graph (TouchDesigner network view)</figcaption>
+                    <img src="../assets/demo/development/color_static.gif" alt="Static brush color baseline">
+                    <figcaption class="dev-caption">Before: fixed brush color</figcaption>
                 </figure>
 
                 <figure class="dev-thumb">
-                    <img src="../assets/image/dev-glsl-control.png" alt="GLSL shader parameter interface">
-                    <figcaption class="dev-caption">Shader parameter interface (GLSL control panel)</figcaption>
+                    <img src="../assets/demo/development/color_noise_rgb_mask.gif" alt="Noise-modulated RGB mask color dynamics">
+                    <figcaption class="dev-caption">After: noise-modulated RGB masking</figcaption>
                 </figure>
 
                 <figure class="dev-thumb">
-                    <img src="../assets/demo/interactive_brush_demo.gif" alt="GLSL shader parameter interface">
-                    <figcaption class="dev-caption">Testing interactive brush with ink diffusion effect (GLSL control)
-                    </figcaption>
+                    <img src="../assets/demo/development/color_detail.gif" alt="Close-up of pigment-like color variation">
+                    <figcaption class="dev-caption">Detail: local pigment variation within a stroke</figcaption>
+                </figure>
+            </div>
+
+            <!-- =========================================================
+                Iteration 02 — Ink Propagation & Diffusion Control
+            ========================================================== -->
+            <div class="iteration-block">
+                <h3 class="iteration-title">Iteration 02 — Ink Propagation &amp; Diffusion Control</h3>
+
+                <div class="iteration-callout">
+                    <p><strong>Problem:</strong> Immediate diffusion made responses feel abrupt and less exploratory.</p>
+                    <p><strong>Approach:</strong> Separated ink behavior into propagation delay, wetness-driven diffusion, and gradient-biased flow (slope field).</p>
+                    <p><strong>Result:</strong> Slower bloom encouraged sustained gestures, while wet/dry variation help gives nuanced texture for alteration.
+                    This gave the ink controllable parameters with temporal, diffusion, and directional variations.</p>
+                </div>
+            </div>
+
+            <div class="dev-thumbs">
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/development/ink_fast_wet.gif" alt="Fast spread wet ink behavior">
+                    <figcaption class="dev-caption">Variant A: fast propagation + high wetness</figcaption>
                 </figure>
 
                 <figure class="dev-thumb">
-                    <img src="../assets/image/dev-installation.jpg" alt="Installation photo of projection on wall">
-                    <figcaption class="dev-caption">Installation photo (projection on wall)</figcaption>
+                    <img src="../assets/demo/development/ink_slow_bloom.gif" alt="Slow bloom delayed ink behavior">
+                    <figcaption class="dev-caption">Variant B: delayed propagation (slow bloom)</figcaption>
+                </figure>
+
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/development/ink_dry_edge.gif" alt="Dry edge crisp ink behavior">
+                    <figcaption class="dev-caption">Variant C: low wetness (crisp edges)</figcaption>
                 </figure>
             </div>
 
             <p class="dev-paragraph">
-                The development focused on integrating gesture data into a real-time shader environment. Mediapipe
-                output was streamed via OSC into TouchDesigner, driving ink diffusion in GLSL. Optimization work
-                reduced latency and enhanced the visual responsiveness of the projected wall, resulting in a fluid
-                and immediate interaction between audience motion and generative visuals.
+                In basic shader terms, ink can be treated as a density buffer that accumulates over time. A wetness map modulates
+                diffusion strength (bleed vs crisp edges), while a gradient field biases motion direction (drift), producing
+                material-like spreading without sacrificing responsiveness.
             </p>
 
-            <div class="dev-thumbs">
-                <figure class="dev-thumb">
-                    <img src="../assets/demo/interaction/z_smoothing_kalman_filter.png"
-                        alt="TouchDesigner network view - data flow patch graph">
-                    <figcaption class="dev-caption">Data flow patch graph (TouchDesigner network view)</figcaption>
-                </figure>
-            </div>
-            <p class="design-paragraph">
-                To stabilize hand movements along the Z-axis, I applied a Kalman Filter, a predictive algorithm commonly
-                used for smoothing noisy sensor data in robotics control and vehicle navigation. In early tests, the
-                hand approach / retreat detection did not work out because of noisy signals. Hand tracking sensors often
-                produce jitter when the hand approaches or moves away from the device, due to depth sensing noise and
-                rapid motion. The Kalman Filter predicts the hand’s next position based on previous measurements and
-                corrects deviations, producing smoother, more reliable motion data.
-                This allows the generative ink trails in Echoes of Motion to respond fluidly to gestures, maintaining
-                the intuitive, playful interaction without distraction from unstable input signals.
+            <!-- =========================================================
+                Iteration 03 — Stabilizing Z-Depth Sensing (Kalman Filter)
+            ========================================================== -->
+            <div class="iteration-block">
+                <h3 class="iteration-title">Iteration 03 — Stabilizing Z-Depth Sensing (Kalman Filter)</h3>
 
+                <div class="iteration-callout">
+                    <p><strong>Problem:</strong> Mediapipe and Webcam-based depth input was noisy, causing unstable thresholds and flickering triggers.</p>
+                    <p><strong>Approach:</strong> Applied a Kalman filter to smooth Z-depth measurements and maintain a predictive state estimate.</p>
+                    <p><strong>Result:</strong> Smoothing reduced jitter and improved the reliability of approach/retreat detection. The improved sensing stability preserved a fluid, non-distracting interaction.</p>
+                </div>
+            </div>
+
+            <div class="dev-thumbs">
+            <figure class="dev-thumb">
+                <img src="../assets/demo/development/z_depth_jitter_before.gif" alt="Noisy z-depth input causing jitter">
+                <figcaption class="dev-caption">Before: noisy Z-depth → unstable response</figcaption>
+            </figure>
+
+            <figure class="dev-thumb">
+                <img src="../assets/demo/interaction/z_smoothing_kalman_filter.png" alt="Kalman filter smoothing plot">
+                <figcaption class="dev-caption">Evidence: Kalman filtering reduces jitter</figcaption>
+            </figure>
+
+            <figure class="dev-thumb">
+                <img src="../assets/demo/development/z_depth_after.gif" alt="Smoothed z-depth input after filtering">
+                <figcaption class="dev-caption">After: stabilized depth + prediction</figcaption>
+            </figure>
+            </div>
+
+            <!-- Synthesis -->
+            <p class="dev-paragraph">
+            Together, these iterations shaped the system into a more stable, expressive feedback loop.
             </p>
 
         </div>
     </section>
+    
+    </section>
+    <!-- Section 6: Outcomes & Reflection -->
+    <section id="project-reflection" class="section reflection-section visible">
+        <div class="container">
+            <h2>Outcomes & Reflection</h2>
 
-    <!-- Section 6: Future Opportunities -->
+            <!-- Reflection Block 1 -->
+            <div class="reflection-block">
+                <h3>What kinds of interaction emerge when movement is allowed to remain fluid and exploratory?</h3>
+                <p>
+                    When movement is not reduced to discrete commands, interaction becomes gradual and adaptive. Participants explore through pauses, repetitions, and shifts, allowing meaning to emerge through continuous motion rather than explicit control.
+                </p>
+            </div>
+
+            <!-- Reflection Block 2 -->
+            <div class="reflection-block">
+                <h3>How can body and computation co-adapt through continuous feedback rather than instruction?</h3>
+                <p>
+                    The system responds to how gestures unfold over time, not just where they occur. In return, the evolving visual response influences subsequent movement, creating a shared rhythm in which body and computation adjust to each other.
+                </p>
+            </div>
+
+            <!-- Reflection Block 3 -->
+            <div class="reflection-block">
+                <h3>Where does the system fall short, and how might it evolve into richer forms of interaction?</h3>
+                <p>The current system is limited by single-user input and camera-based sensing. Future iterations could expand toward multi-user interaction, learning-based interpretation, and additional sensory modalities to support more complex and collective forms of engagement.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Future Opportunities -->
     <section id="project-future" class="section future-section visible">
         <div class="container">
             <h2>Future Opportunities</h2>
 
-         <li>
-            Expand the motion recognition system to a more complete gesture mapping language system to digital brush behavior.
-         </li>
-         <li>
-            Exploring multi-user interactions that turn shared movement into collective expression.
-         </li>
-         <li>
-            Extending the installation into architectural or public spaces, where walls and environments become responsive surfaces.
-         </li>
+            <p class="dev-paragraph">
+               Pathways for further exploration:
+            </p>
+
+            <div class="dev-thumbs">
+                <!-- 1) Multi-user -->
+                <p>
+                    <strong>From Individual Gesture to Collective Expression</strong><br>
+
+                    Extend the system for multi-user interaction to turn individual gestures into shared expression, raising
+                    questions of coordination, authorship, and social dynamics in responsive environments.
+                </p>
+
+                <!-- 2) Learning-based -->
+                <p>
+                    <strong>Learning-Based Gesture Interpretation</strong><br>
+
+                        Introduce learning-based models to adapt to personal movement styles over time, shifting from predefined
+                        mappings toward personalized, evolving responses.
+                </p>
+
+                <!-- 3) Architectural + multimodal -->
+                <p>
+                    <strong>Architectural and Multimodal Extensions</strong><br>
+                        Scale the system into architectural or public contexts and integrate sound or haptic feedback to expand the
+                        wall into a multimodal interface for perceiving movement across space.
+                </p>
+            </div>
         </div>
     </section>
 

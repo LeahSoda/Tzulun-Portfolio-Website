@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tempo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <header>
+    </header>
+
+    <!-- HERO -->
+    <section class="project-hero">
+    
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Tempo</h1>
+            <p class="hero-text">When movement can be traced, what does continuity look like?
+            </p>
+        </div>
+    </div>
+
+    <div class="project-video-wrap">
+        <iframe
+            src="https://player.vimeo.com/video/1146788796?&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+            allow="autoplay; fullscreen; picture-in-picture" 
+            title="Echoes of Motion preview"
+            style="cursor: pointer;">
+        </iframe>
+    </div>
+
+    <div class="hero-content">
+        <div class="hero-text">
+            <p class="hero-tag">2024 · Personal Research Project </p>
+            <p class="hero-meta">supported by SCI-Arc </p>
+        </div>
+    </div>
+    </section>
+
+    <!-- Section 1SYNOPSIS  -->
+    <section class="section intention visible">
+        <div class=" container">
+            <div class="section synopsis" id="project-synopsis">
+                <p>
+                    Tempo explores how the continuity of human motion can be revealed through computational means.
+                    Using a physically-based particle system, the project traces movement as a flow of force. When velocity, acceleration, and directional change shape evolving fields and visual trails, it encourages viewers to follow, interpret, and sense the dynamics embedded in motion.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Intention -->
+    <section id="project-intention" class="section intention visible">
+        <div class="container">
+            <div class="intention-text">
+                <h2>Intention</h2>
+                <p>
+                    Tempo grew out of my curiosity about how motion carries meaning beyond visible form.
+ When watching dance performances, I became particularly drawn to what happens between poses: the momentum that persists, the hesitation before a shift, and the subtle forces that stretch and reshape space as the body moves. These qualities are often felt intuitively, yet they are difficult to isolate or describe using conventional motion representations.
+                </p>
+                <p>
+                    Rather than treating movement as a sequence of discrete positions, Tempo investigates motion as a continuous flow of force. I am interested in the in-betweens of motion, particularly how velocity, acceleration, and directional change can be understood as a representation of “trace” that persists over time and shape behavior, rather than simply describing where a body has been.
+                </p>
+                <p>
+                    This project serves as an early research exploration into how human motion can act as input for a computational system. By translating motion capture data into force fields and particle behaviors, Tempo asks how computational systems might sense continuity, rhythm, and momentum, instead of reacting only to static poses or events.                <p>
+                </p>
+                <p>
+                    Through this process, I explore particles as a medium for recording motion over time. Unlike geometry, particles allow force to accumulate, disperse, and transform more fluidly and make temporal continuity visible. Tempo positions motion not as something to be reproduced, but as something that can actively shape a dynamic system, revealing how movement itself can become computational material.
+
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Research-->
+    <section class="section research-section visible" id="project-research">
+        <div class="container">
+            <h2>Research</h2>
+
+            <p class="research-intro">
+                Tempo investigates how motion can be interpreted as force, and how a particle medium can document continuity as flow rather
+                than form.
+            </p>
+
+            <!-- research questions callout  -->
+            <div class="research-questions">
+                <p class="rq">How can motion be translated into a continuous force landscape?</p>
+                <p class="rq">What becomes visible when force is represented as flow rather than geometry?</p>
+                <p class="rq-footnote">
+                    The goal is not to animate an object, but to let movement shape the behavior of a dynamic system.
+                </p>
+            </div>
+
+            <!-- Research visual layout: two-col -->
+            <div class="research-grid-compact">
+                <!-- Left visuals -->
+                <div class="research-left">
+                <div class="research-grid research-grid-compact">
+                    <div class="research-item">
+                        <img src="../assets/demo/tempo/T-Res-Motion-01.png" alt="Motion study / motion continuity" />
+                        <span class="research-caption">Motion study: directionality & rhythm</span>
+                    </div>
+                    <div class="research-item">
+                        <img src="../assets/demo/tempo/T-Res-Motion-02.png" alt="Motion study / motion extraction" />
+                        <span class="research-caption">Motion study: motion extraction</span>
+                    </div>
+                </div>
+
+                <div class="research-item research-item-wide">
+                    <img src="../assets/demo/tempo/T-Res-Motion-03.png" alt="Continuity traces / trail experiments" />
+                    <span class="research-caption">Continuity traces: trails as time-based record</span>
+                </div>
+                </div>
+
+                <!-- Right text -->
+                <div class="intention-text">
+                    <h3>Why particles</h3>
+                    <p>
+                        Compared to geometry, particles can represent force as flow—accumulating, dispersing, and transforming over time—creating
+                        a more continuous trace of motion.
+                    </p>
+
+                    <h3>What “continuity” means here</h3>
+                    <p>
+                        Continuity is treated as temporal coherence—how momentum carries across frames—rather than a sequence of discrete poses.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+
+    <!-- =========================
+        TECHNICAL APPROACH
+        ========================= -->
+    <section class="section design-section" id="project-design">
+    <h2>Technical Approach</h2>
+
+    <div class="container">
+
+        <!-- System Diagram-->
+        <svg class="concept-diagram" width="100%" viewBox="0 0 1200 600"
+                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tempo system pipeline diagram">
+
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+                        markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#b5b5b5" stroke-width="1.2" stroke-linejoin="round"/>
+                </marker>
+
+                <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.05"/>
+                </filter>
+            </defs>
+
+            <!-- =========================
+                Title (safe top margin)
+                ========================= -->
+            <text x="600" y="40" class="label">SYSTEM PIPELINE</text>
+            <text x="600" y="64" class="sub">Motion capture → force vectors → distance fields → particle behavior → trails</text>
+
+            <!-- =========================
+                State boundaries (equal width)
+                ========================= -->
+            <!-- layout constants:
+                columns: [60..380], [440..760], [820..1140]
+                top: 110, height: 450
+            -->
+            <rect x="60"  y="110" width="320" height="450" class="state sensing"/>
+            <text x="78"  y="138" class="state-label sensing">SENSING</text>
+
+            <rect x="440" y="110" width="320" height="450" class="state interpreting"/>
+            <text x="458" y="138" class="state-label interpreting">INTERPRETING</text>
+
+            <rect x="820" y="110" width="320" height="450" class="state rendering"/>
+            <text x="838" y="138" class="state-label rendering">SIMULATING / RENDERING</text>
+
+            <!-- =========================
+                Node cards (equal sizes)
+                card size: 280 x 150
+                card positions:
+                col1 x=80,  col2 x=460, col3 x=840
+                row1 y=165, row2 y=345
+                ========================= -->
+
+            <!-- ========== COL 1 / ROW 1: Human Movement ========== -->
+            <g filter="url(#softShadow)">
+            <rect x="80" y="165" rx="12" ry="12" width="280" height="150" fill="none" stroke="#b5b5b5" stroke-width="1"/>
+            </g>
+
+            <!-- icon (LEFT ZONE) -->
+            <g transform="translate(98,190)" stroke="#b5b5b5" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="22" cy="14" r="8"/>
+            <path d="M22 22 L22 58"/>
+            <path d="M22 34 L6 48"/>
+            <path d="M22 34 L40 44"/>
+            <path d="M22 58 L8 84"/>
+            <path d="M22 58 L44 80"/>
+            <path d="M48 18 Q62 22 66 38"/>
+            </g>
+
+            <!-- text (RIGHT ZONE) -->
+            <text x="270" y="202" class="text" text-anchor="start">Human Movement</text>
+            <text x="270" y="228" class="sub"  text-anchor="start">full-body performance</text>
+            <text x="270" y="252" class="sub"  text-anchor="start">energy · rhythm · continuity</text>
+
+
+            <!-- ========== COL 1 / ROW 2: Motion Capture ========== -->
+            <g filter="url(#softShadow)">
+            <rect x="80" y="345" rx="12" ry="12" width="280" height="150" fill="none" stroke="#b5b5b5" stroke-width="1"/>
+            </g>
+
+            <!-- icon (LEFT ZONE) -->
+            <g transform="translate(98,368)" stroke="#b5b5b5" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="18" width="30" height="18" rx="3"/>
+            <circle cx="17" cy="27" r="4"/>
+            <path d="M32 22 L42 18 L42 36 L32 32"/>
+            <path d="M42 22 L60 16"/>
+            <path d="M42 27 L62 27"/>
+            <path d="M42 32 L60 38"/>
+
+            <circle cx="70" cy="26" r="7"/>
+            <path d="M70 33 L70 64"/>
+            <path d="M70 42 L60 52"/>
+            <path d="M70 42 L80 52"/>
+            <path d="M70 64 L62 84"/>
+            <path d="M70 64 L78 84"/>
+
+            <circle cx="70" cy="38" r="1.8" fill="#b5b5b5" stroke="none"/>
+            <circle cx="66" cy="48" r="1.8" fill="#b5b5b5" stroke="none"/>
+            <circle cx="74" cy="48" r="1.8" fill="#b5b5b5" stroke="none"/>
+            <circle cx="64" cy="66" r="1.8" fill="#b5b5b5" stroke="none"/>
+            <circle cx="76" cy="66" r="1.8" fill="#b5b5b5" stroke="none"/>
+            </g>
+
+            <!-- text (RIGHT ZONE) -->
+            <text x="270" y="382" class="text" text-anchor="start">Motion Capture (Input)</text>
+            <text x="270" y="408" class="sub"  text-anchor="start">Rokoko suit → trajectories</text>
+            <text x="270" y="432" class="sub"  text-anchor="start">timing · joints · motion curves</text>
+
+
+            <!-- ========== COL 2 / ROW 1: Motion Interpretation ========== -->
+            <g filter="url(#softShadow)">
+            <rect x="460" y="165" rx="12" ry="12" width="280" height="150" fill="none" stroke="#b5b5b5" stroke-width="1"/>
+            </g>
+
+            <!-- icon (LEFT ZONE) -->
+            <g transform="translate(478,188)" stroke="#b5b5b5" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 98 L12 12 L68 12"/>
+            <path d="M20 82 L58 44" marker-end="url(#arrow)"/>
+            <path d="M20 68 L46 22" marker-end="url(#arrow)"/>
+            <path d="M20 92 L70 62" marker-end="url(#arrow)"/>
+            </g>
+
+            <!-- text (RIGHT ZONE) -->
+            <text x="652" y="202" class="text" text-anchor="start">Motion Interpretation</text>
+            <text x="652" y="228" class="sub"  text-anchor="start">vectors of directionality</text>
+            <text x="652" y="270" class="sub"  text-anchor="start">momentum · continuity</text>
+
+
+            <!-- ========== COL 2 / ROW 2: Force-to-Field Translation ========== -->
+            <g filter="url(#softShadow)">
+            <rect x="460" y="345" rx="12" ry="12" width="280" height="150" fill="none" stroke="#b5b5b5" stroke-width="1"/>
+            </g>
+
+            <!-- icon (LEFT ZONE) -->
+            <g transform="translate(478,370)" stroke="#b5b5b5" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 92 C26 70, 42 70, 58 92 C74 114, 90 114, 106 92"/>
+            <path d="M10 68 C26 46, 42 46, 58 68 C74 90, 90 90, 106 68" opacity="0.75"/>
+            <path d="M10 44 C26 22, 42 22, 58 44 C74 66, 90 66, 106 44" opacity="0.55"/>
+            </g>
+
+            <!-- text (RIGHT ZONE) -->
+            <text x="652" y="382" class="text" text-anchor="start">Force-to-Field Translation</text>
+            <text x="652" y="408" class="sub"  text-anchor="start">signed distance / force fields</text>
+            <text x="652" y="432" class="sub"  text-anchor="start">flow · propagation · influence</text>
+
+
+            <!-- ========== COL 3 / ROW 1: Particle Behavior ========== -->
+            <g filter="url(#softShadow)">
+            <rect x="840" y="165" rx="12" ry="12" width="320" height="150" fill="none" stroke="#b5b5b5" stroke-width="1"/>
+            </g>
+
+            <!-- icon (LEFT ZONE) -->
+            <g transform="translate(858,370)" stroke="#b5b5b5" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="10" y="18" width="66" height="46" rx="7"/>
+            <path d="M22 30 C34 18, 46 18, 58 30 C70 42, 68 54, 52 58 C38 62, 32 56, 24 46 C16 36, 14 38, 22 30"/>
+            <path d="M86 28 L106 20"/>
+            <path d="M86 42 L110 42"/>
+            <path d="M86 56 L106 64"/>
+            </g>
+
+
+            <!-- node graph + particles icon -->
+            <g transform="translate(860,195)" stroke="#b5b5b5" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="10" y="10" width="26" height="18" rx="3"/>
+                <rect x="56" y="10" width="26" height="18" rx="3"/>
+                <rect x="33" y="48" width="26" height="18" rx="3"/>
+                <path d="M36 19 L56 19"/>
+                <path d="M23 28 L44 48"/>
+                <path d="M69 28 L46 48"/>
+                <circle cx="98" cy="52" r="2" fill="#b5b5b5" stroke="none"/>
+                <circle cx="110" cy="60" r="2" fill="#b5b5b5" stroke="none"/>
+                <circle cx="96" cy="68" r="2" fill="#b5b5b5" stroke="none"/>
+                <circle cx="112" cy="72" r="2" fill="#b5b5b5" stroke="none"/>
+            </g>
+
+            <text x="1060" y="202" class="text">Particle Behavior</text>
+            <text x="1060" y="228" class="sub">Houdini · VEX rules</text>
+            <text x="1060" y="270" class="sub">velocity · turbulence · trails</text>
+
+            <!-- ========== COL 3 / ROW 2: Visual Output ========== -->
+            <g filter="url(#softShadow)">
+                <rect x="840" y="345" rx="12" ry="12" width="320" height="150" fill="none" stroke="#b5b5b5" stroke-width="1"/>
+            </g>
+
+            <text x="1060" y="382" class="text">Visual Output</text>
+            <text x="1060" y="408" class="sub">trails visualize continuity</text>
+            <text x="1060" y="432" class="sub">force becomes flow</text>
+
+            <!-- =========================
+                Connectors (clean routing)
+                ========================= -->
+            <!-- Human -> Mocap (vertical) -->
+            <path d="M220 315 L220 345" stroke="#b5b5b5" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+
+            <!-- Mocap -> Vectors (right, then up) -->
+            <path d="M360 420 L410 420 L410 240 L460 240"
+                    stroke="#b5b5b5" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+
+            <!-- Vectors -> Fields (vertical) -->
+            <path d="M600 315 L600 345" stroke="#b5b5b5" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+
+            <!-- Fields -> Particles (right, then up) -->
+            <path d="M740 420 L790 420 L790 240 L840 240"
+                    stroke="#b5b5b5" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+
+            <!-- Particles -> Output (vertical) -->
+            <path d="M1060 315 L1060 345" stroke="#b5b5b5" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+
+            <!-- =========================
+                Program / Hardware badges (aligned bottom)
+                ========================= -->
+            <g transform="translate(80,520)">
+                <rect x="0" y="0" rx="12" ry="12" width="160" height="30" fill="none" stroke="#b5b5b5" stroke-width="1"/>
+                <text x="80" y="20" class="mini-label">ROKOKO (INPUT)</text>
+            </g>
+
+            <g transform="translate(460,520)">
+                <rect x="0" y="0" rx="12" ry="12" width="180" height="30" fill="none" stroke="#b5b5b5" stroke-width="1"/>
+                <text x="90" y="20" class="mini-label">SDF / FIELDS</text>
+            </g>
+
+            <g transform="translate(840,520)">
+                <rect x="0" y="0" rx="12" ry="12" width="140" height="30" fill="none" stroke="#b5b5b5" stroke-width="1"/>
+                <text x="70" y="20" class="mini-label">HOUDINI</text>
+            </g>
+
+            <g transform="translate(990,520)">
+                <rect x="0" y="0" rx="12" ry="12" width="130" height="30" fill="none" stroke="#b5b5b5" stroke-width="1"/>
+                <text x="65" y="20" class="mini-label">VEX</text>
+            </g>
+
+            </svg>
+
+        <!-- Right: Short method explanation -->
+        <div class="design-language">
+          <h3>1) Motion Capture as Force Input</h3>
+            <p class="design-paragraph">
+                Full-body gestures were captured using a Rokoko motion capture suit and processed beyond skeletal animation.
+                Motion data was interpreted as vectors of directionality, momentum, and temporal continuity, describing how force flows through the body over time.
+                These vectors form the energetic input that drives the system.
+            </p>
+
+        <h3>2) Force-to-Field Translation</h3>
+        <p class="design-paragraph">
+            Motion-derived vectors were mapped into signed distance fields that encode acceleration, flow, and spatial influence.
+            Rather than discrete coordinates, movement generates a continuously evolving force landscape that shapes system behavior.
+        </p>
+
+        <h3>3) Particle Behavior as Material</h3>
+        <p class="design-paragraph">
+            A custom particle system responds to the force fields by adjusting velocity, turbulence, and trail behavior.
+            Particles behave as if reading the dancer’s energy—swirling, clustering, stretching, or dissolving in response to expressive motion.
+        </p>
+        </div>
+    </div>
+
+    <!-- =========================
+        DEVELOPMENT
+        ========================= -->
+    <section class="section development-section visible" id="project-development">
+    
+        <div class="container">
+            <h2>Development</h2>
+
+            <!-- Optional dev video (if you have) -->
+            <div class="dev-video-wrap">
+                <figure>
+                    <img src="../assets/demo/tempo/T-Dev-mocap-animation.svg" alt="mocap data animation">
+                </figure>
+            </div>
+
+            <!-- Iteration ladder-->
+            <div class="iteration-block">
+                <div class="iteration-title">Iteration 1 — Motion cleanup & stable vectors</div>
+                <div class="iteration-callout">
+                    <p><strong>Goal:</strong> preserve continuity while reducing noise.</p>
+                    <p><strong>Result:</strong> usable velocity/acceleration signals for force mapping.</p>
+                </div>
+            </div>
+            <div class="dev-thumbs-2">
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/tempo/T-Dev-mocap-animation.svg" alt="Mocap cleanup" />
+                    <div class="dev-caption">Before / after smoothing</div>
+                </figure>
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/tempo/T-Dev-vector-01.gif" alt="Vector extraction" />
+                    <div class="dev-caption">Vector extraction tests</div>
+                </figure>
+            </div>
+
+            <div class="iteration-block">
+                <div class="iteration-title">Iteration 2 — Field mapping & behavior calibration</div>
+                <div class="iteration-callout">
+                <p><strong>Goal:</strong> translate force into spatial influence (distance fields).</p>
+                <p><strong>Result:</strong> stable propagation + readable flow responses.</p>
+                </div>
+            </div>
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/tempo/T-Dev-vector-mapping-demo.gif" alt="Field visualization" />
+                    <div class="dev-caption">Field probes visualization</div>
+                </figure>
+         
+
+            <div class="iteration-block">
+                <div class="iteration-title">Iteration 3 — Trail logic for continuity</div>
+                <div class="iteration-callout">
+                    <p><strong>Goal:</strong> make temporal continuity legible through trails.</p>
+                    <p><strong>Result:</strong> length/curl/density respond to acceleration & direction change.</p>
+                </div>
+                <div class="dev-thumbs-2">
+                    <figure class="dev-thumb">
+                        <img src="../assets/demo/tempo/T-Dev-trail-01.png" alt="Trail study A" />
+                        <div class="dev-caption">Original Trail</div>
+                    </figure>
+                    <figure class="dev-thumb">
+                        <img src="../assets/demo/tempo/T-Dev-swirl-01.png" alt="Trail study B" />
+                        <div class="dev-caption">Trail variant A: Add directional control for each particle strength: 20%</div>
+                    </figure>
+                        <figure class="dev-thumb">
+                        <img src="../assets/demo/tempo/T-Dev-swirl-02.png" alt="Final trail logic" />
+                        <div class="dev-caption">Trail variant B: Add directional control for each particle, strength: 80%</div>
+                        </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section:  Outcomes & Reflection -->
+    <section id="project-reflection" class="section reflection-section visible">
+        <div class="container">
+            <h3>Outcomes</h3>
+            <p class="design-paragraph">
+            Tempo produced a computational system that visualizes motion as continuous force rather than discrete form.
+            Motion capture was translated into vector and distance-based fields, allowing velocity, acceleration, and directional change to drive fluid particle behavior and time-based trails.
+            Through iteration, particles proved especially effective for making continuity legible—preserving temporal coherence where geometry tends to fragment it.
+            </p>
+
+            <h3>Reflections</h3>
+            <p class="design-paragraph">
+            While Tempo made force and continuity visible, the interaction remained indirect: the system responded to recorded motion, but the performer received no real-time feedback while moving.
+            This clarified a key gap—visualizing motion is not the same as interacting with it.
+            Without a feedback loop, motion could be traced and analyzed, but not explored as an ongoing dialogue between body and system.
+            </p>
+
+            <h3>Emerging question</h3>
+            <p class="design-paragraph">
+            What happens when motion is not only traced, but answered?
+            <strong>How might a system respond as movement unfolds, so the body can adapt, explore, and co-create in real time?</strong>
+            </p>
+
+            <p class="design-paragraph">
+            This shift directly informed <em>Echoes of Motion</em>, where continuity and gesture are no longer observed after the fact,
+            but experienced through responsive feedback between human movement and computational behavior.
+            </p>
+        </div>
+    </section>
+
+    <!-- =========================
+        FUTURE DIRECTIONS (brief)
+        ========================= -->
+
+    <section id="project-future" class="section future-section visible">
+        <div class="container">
+            <h2>Future Opportunities</h2>
+
+            <p class="dev-paragraph">
+               Pathways for further exploration:
+            </p>
+
+            <div class="dev-thumbs">
+                <!-- 1) Multi-user -->
+                <p>
+                    <strong>From Individual Gesture to Collective Expression</strong><br>
+
+                    Extend force-based motion mapping into a richer vocabulary to allow multiple bodies to shape overlapping and collective motion fields.
+                </p>
+
+                <!-- 2) Learning-based -->
+                <p>
+                    <strong>Learning-Based Gesture Interpretation</strong><br>
+
+                       Explore adaptive systems that learn from repeated movement patterns, enabling the system to respond to personal or evolving motion styles rather than predefined gestures.
+                </p>
+
+                <!-- 3) Architectural + multimodal -->
+                <p>
+                    <strong>Architectural and Multimodal Extensions</strong><br>
+                       Translate force flow into multimodal outputs 
+                       (sound, light, spatial feedback).
+                </p>
+            </div>
+        </div>
+    </section>
+
+  
+    
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> Tzulun All Rights Reserved.</p>
+    </footer>
+
+    <script src="../src/main.js"></script>
+
+</html>

@@ -2,9 +2,9 @@
 //Update Date
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const BASE = "/Tzulun-Portfolio-Website/";
 
-
-fetch('navbar.html')
+fetch(`${BASE}src/navbar.html`)
     .then(response => response.text())
     .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;

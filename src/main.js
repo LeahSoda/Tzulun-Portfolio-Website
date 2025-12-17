@@ -4,7 +4,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 
 
-fetch('../src/navbar.html')
+fetch('src/navbar.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;

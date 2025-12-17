@@ -417,11 +417,11 @@
                  <div class="feature-gif">
                     <figure class="research-item">
                         <img src="../assets/demo/interaction/Tech-Map-01.gif"
-                        alt="Mapping openness to brush activation">
+                        alt="Mapping openness to stroke activation">
                     </figure>
                 </div>
                 <figcaption class="research-caption">
-                            <strong>Hand openness</strong> → brush activation
+                            <strong>Hand openness</strong> → stroke activation
                 </figcaption>
             </div>
            
@@ -453,8 +453,8 @@
             <!-- A) Full-width development reel -->
             <div class="dev-video-wrap">
                 <figure class="dev-thumb">
-                    <img src="../assets/demo/interaction/Dev-title-img-1.gif" alt="Static brush color baseline">
-                    <figcaption class="dev-caption">Noise-based brush color generation</figcaption>
+                    <img src="../assets/demo/interaction/Dev-title-img-1.gif" alt="Static stroke color baseline">
+                    <figcaption class="dev-caption">Noise-based stroke color generation</figcaption>
                 </figure>
 
                 <div class="dev-overlay" aria-hidden="true">
@@ -481,8 +481,8 @@
 
             <div class="dev-thumbs">
                 <figure class="dev-thumb">
-                    <img src="../assets/demo/interaction/Dev-Brush-01.gif" alt="Static brush color baseline">
-                    <figcaption class="dev-caption">Noise-based brush color generation</figcaption>
+                    <img src="../assets/demo/interaction/Dev-Brush-01.gif" alt="Static stroke color baseline">
+                    <figcaption class="dev-caption">Noise-based stroke color generation</figcaption>
                 </figure>
 
                 <figure class="dev-thumb">
@@ -492,7 +492,7 @@
 
                 <figure class="dev-thumb">
                     <img src="../assets/demo/interaction/Dev-Color-01.gif" alt="Noise-modulated RGB mask color dynamics">
-                    <figcaption class="dev-caption">RGB masking for brush color</figcaption>
+                    <figcaption class="dev-caption">RGB masking for stroke color</figcaption>
                 </figure>
             </div>
 
@@ -542,12 +542,12 @@
                 <div class="iteration-callout">
                     <p><strong>Problem:</strong>The interaction lacked fluidity for two reasons.
                         First, webcam-based Z-depth sensing was noisy, causing unstable approach and retreat detection.
-                        Second, the interaction vocabulary was limited to triggering and dragging within a single brush, restricting expressive control.</p>
+                        Second, the interaction vocabulary was limited to triggering and dragging within a single stroke, restricting expressive control.</p>
                     <p><strong>Experiment:</strong> I addressed sensing stability and interaction expressivity in parallel.
                         To stabilize depth input, I applied a Kalman filter to smooth noisy Z-depth measurements and maintain a predictive state estimate.
                         To expand gestural control, I introduced additional gesture interpretations beyond basic triggering, including approach/retreat, hand openness, and hand rotation.</p>
                     <p><strong>Observation</strong> Depth smoothing significantly reduced jitter and improved the reliability of proximity-based interaction.
-                        At the same time, mapping multiple gesture attributes created richer, more continuous control: hand openness naturally modulated stroke size, while rotation influenced brush orientation.
+                        At the same time, mapping multiple gesture attributes created richer, more continuous control: hand openness naturally modulated stroke size, while rotation influenced stroke orientation.
                         These mappings encouraged users to explore variation within a single gesture rather than switching between discrete modes.</p>
                 </div>
             </div>

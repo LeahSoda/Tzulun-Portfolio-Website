@@ -21,12 +21,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
       <nav class="nav-bar" id="homepage-nav-bar">
         <a class="nav-bar-link" href="${prefix}index.html#projects">Projects</a>
-        <a class="nav-bar-link" href="${prefix}cv.html">CV</a>
+        <a class="nav-bar-link" href="${prefix}Doc/Tzulun_Huang_CV.pdf">CV</a>
       </nav>
 
       <nav class="sidebar" id="sidebar" aria-label="Sidebar menu">
         <a href="${prefix}index.html#projects" data-anchor="projects">Projects</a>
-        <a href="${prefix}cv.html">CV</a>
+        <a href="${prefix}Doc/Tzulun_Huang_CV.pdf">CV</a>
       </nav>
     </div>
   `;

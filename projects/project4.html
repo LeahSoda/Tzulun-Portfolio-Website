@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tempo</title>
+    <title>VAST</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../src/style.css">
 </head>
@@ -16,34 +16,30 @@
     </header>
 
     <!-- HERO -->
-    <section class="project-hero">
+    <section class="section intention visible">
     
-    <div class="hero-content">
-        <div class="hero-text">
-            <h1>Vast</h1>
-            <p class="hero-text">How can a generative image be translated into a continuous, executable toolpath without losing its spatial intention, density logic, and material rhythm?
-            </p>
-        </div>
-    </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Vast</h1>
+                <p class="hero-text">How can generative representations be interpreted into physical action, when they were never designed to be executed?
+                </p>
+            </div>
+            
+            <div class="project-video-wrap">
+                <figure>
+                    <img src="../assets/demo/vast/Vast-hero.png" alt="Vast project demo" class="orientation-landscape"/>
+                </figure>
+            </div>
 
-    <div class="project-video-wrap">
-        <iframe
-            src="https://player.vimeo.com/video/1146788796?&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-            allow="autoplay; fullscreen; picture-in-picture" 
-            title="Echoes of Motion preview"
-            style="cursor: pointer;">
-        </iframe>
-    </div>
-
-    <div class="hero-content">
-        <div class="hero-text">
-            <p class="hero-tag">2024 · Group Project · SCI-Arc </p>
-            <p class="hero-tag">( In collaboration with Termrak, Wenhao Wang, Wei Ding )</p>
-            <p class="hero-meta">My role: Robotic path algorithm & fabrication logic  </p>
-            <p class="hero-meta">Advisor: M. Casey Rehm </p>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-tag">2024 · Group Research Project · SCI-Arc </p>
+                    <p class="hero-tag">Advisor: M. Casey Rehm </p>
+                    <p class="hero-tag">Collaborators: Termrak, Wenhao Wang, Wei Ding </p>
+                    <p class="hero-tag">My role: Robotic path algorithm design, contour extraction </p>
+                </div>
+            </div>
         </div>
-    </div>
     </section>
 
     <!-- Section 1SYNOPSIS  -->
@@ -51,8 +47,7 @@
         <div class=" container">
             <div class="section synopsis" id="project-synopsis">
                 <p>
-                     VAST employs a diffusion-based generative model orchestrated through ComfyUI to explore depth-driven facade patterning. Rather than relying on free-form prompts, the system uses structured control parameters to guide regional variation, pattern density, and depth modulation. Generated images encode spatial logic as continuous pattern fields rather than isolated textures. These outputs are interpreted through contour extraction, translating visual depth cues into explicit geometric representations. My role focused on developing the algorithmic translation from contour geometry to robotic toolpaths, designing region-based path logic that aligns fabrication constraints with generative design intent.
-                        Through this translation layer, the project positions robotic path planning as an exploratory system—where generative patterns are not merely fabricated, but interrogated, restructured, and re-authored through material and machine behavior.
+                     Generative and AI-assisted design tools are great at producing images quickly. Though they generate rich visual structures, density variations, and spatial patterns, they are not designed to act. Fabrication is the opposite. Physical processes require clarity. Every stroke must be continuous, intentional, and irreversible. In the process of production, there is no noise to “smooth out” once it begins. This project proposes a pipeline that carries generative speculation into physical fabrication, and explores what must be abstracted from generative outputs in order for them to become executable. Through algorithmic contour extraction and fill-pattern design, We translate generative representations into layered toolpaths that a robotic arm can perform.
                 </p>
             </div>
         </div>
@@ -64,8 +59,8 @@
             <div class="intention-text">
                 <h2>Intention</h2>
                 <p>
-                    We seek to explore how generative AI and robotic fabrication can operate as a continuous design system rather than separate stages of image-making and production. We investigate diffusion models not as tools for surface aesthetics, but as mechanisms for encoding depth, regional variation, and spatial logic within facade systems. Through the translation from generative patterns to robotic toolpaths, we aim to examine how design intent is transformed through material constraints and machine behavior. Ultimately, we frame fabrication as an active participant in the design process, shaping architectural form through interaction rather than execution.
-                </p>
+                    While AI-assisted generative systems enable rapid visual exploration, their outputs are not designed to act. Fabrication demands the opposite: continuity, commitment, and irreversibility. Once production begins, ambiguity must be resolved into instruction. Our intention was to investigate how generative processes might be reinterpreted when they encounter the constraints of material, motion, and time.
+                    Within this framework, I worked on algorithmic translation and developed contour extraction and fill-pattern algorithms that reinterpret generative outputs as executable toolpaths.  Through this, we aimed to develop methods that translate spatial density and visual rhythm into continuous toolpaths that a robotic arm could perform.                </p>
             </div>
         </div>
     </section>
@@ -74,20 +69,18 @@
     <section class="section research-section visible" id="project-research">
         <div class="container">
             <h2>Research</h2>
-
-            <p class="research-intro">
-                Tempo investigates how motion can be interpreted as force, and how a particle medium can document continuity as flow rather
-                than form.
-            </p>
-
-            <!-- research questions callout  -->
-            <div class="research-questions">
-                <p class="rq">How can motion be translated into a continuous force landscape?</p>
-                <p class="rq">What becomes visible when force is represented as flow rather than geometry?</p>
-                <p class="rq-footnote">
-                    The goal is not to animate an object, but to let movement shape the behavior of a dynamic system.
+                
+                <p class="research-intro">
+                    <h4>Different contour extraction thresholds</h4>
+                    
+                <h4>Multiple hatch strategies (directional, cross-hatch, voronoi)</h4>
+                <h4>Layer ordering and stroke density</h4>
                 </p>
-            </div>
+
+            
+                <p>
+                Layer ordering and stroke density
+            </p>
 
             <!-- Research visual layout: two-col -->
             <div class="research-grid-compact">
@@ -128,39 +121,6 @@
         
     </section>
 
-
-    <!-- =========================
-        TECHNICAL APPROACH
-        ========================= -->
-    <section class="section design-section" id="project-design">
-    <h2>Technical Approach</h2>
-
-    <div class="container">
-
-        
-
-        <!-- Right: Short method explanation -->
-        <div class="design-language">
-          <h3>1) Motion Capture as Force Input</h3>
-            <p class="design-paragraph">
-                Full-body gestures were captured using a Rokoko motion capture suit and processed beyond skeletal animation.
-                Motion data was interpreted as vectors of directionality, momentum, and temporal continuity, describing how force flows through the body over time.
-                These vectors form the energetic input that drives the system.
-            </p>
-
-        <h3>2) Force-to-Field Translation</h3>
-        <p class="design-paragraph">
-            Motion-derived vectors were mapped into signed distance fields that encode acceleration, flow, and spatial influence.
-            Rather than discrete coordinates, movement generates a continuously evolving force landscape that shapes system behavior.
-        </p>
-
-        <h3>3) Particle Behavior as Material</h3>
-        <p class="design-paragraph">
-            A custom particle system responds to the force fields by adjusting velocity, turbulence, and trail behavior.
-            Particles behave as if reading the dancer’s energy—swirling, clustering, stretching, or dissolving in response to expressive motion.
-        </p>
-        </div>
-    </div>
 
     <!-- =========================
         DEVELOPMENT
@@ -236,13 +196,21 @@
     <!-- Section:  Outcomes & Reflection -->
     <section id="project-reflection" class="section reflection-section visible">
         <div class="container">
-            <h3>Outcomes</h3>
-            <p class="design-paragraph">
-            Tempo produced a computational system that visualizes motion as continuous force rather than discrete form.
-            Motion capture was translated into vector and distance-based fields, allowing velocity, acceleration, and directional change to drive fluid particle behavior and time-based trails.
-            Through iteration, particles proved especially effective for making continuity legible—preserving temporal coherence where geometry tends to fragment it.
-            </p>
+            <h3>Outcomes & Reflection</h3>
+            
+                    <!-- 1) Multi-user -->
+                    <p>
+                        <strong>Fabrication Reshapes Generative Logic</strong><br>
 
+                        Material constraints, motion continuity, and irreversibility transformed visual density and spatial intention, exposing a fundamental mismatch between image-based generation and physical execution.
+                    </p>
+
+                    <!-- 2) Learning-based -->
+                    <p>
+                        <strong>Questions for Generative–Fabrication Pipelines</strong><br>
+
+                            What generative qualities are worth preserving when execution demands continuity?
+                    </p>
         </div>
     </section>
 

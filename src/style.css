@@ -1263,3 +1263,6 @@ header,
   fill: rgba(138, 108, 190, 0.9);
 }
 
+.orientation-lansdcape {
+    transform: rotate(-90deg);
+}

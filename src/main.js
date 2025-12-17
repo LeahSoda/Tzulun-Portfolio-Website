@@ -1,58 +1,47 @@
 
-//Update Date
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const BASE = "/Tzulun-Portfolio-Website/";
-
-fetch(`${BASE}src/navbar.html`)
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-        // Load navbar.js only after navbar HTML is inserted
-        const script = document.createElement('script');
-        script.src = '../src/navbar.js';
-        document.body.appendChild(script);
-    })
-    .catch(error => console.error('Error loading navbar:', error));
+// Update Date
+document.addEventListener("DOMContentLoaded", () => {
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+});
 
 // Section enter scrolling animation
-document.addEventListener('DOMContentLoaded', () =>{
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.6 });
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".section");
+  if (!sections.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
 });
 
-//Scroll to anchor if URL has a hash
-window.addEventListener('DOMContentLoaded', ()=>{
-    if (window.location.hash){
-        const targetId = window.location.hash.substring(1);
-        const targetSection = document.getElementById(targetId);    
-        if (targetSection) {
-            //Use setTimeout to ensure all rendering is done before scrolling
-            setTimeout(() => {  
-                    targetSection.scrollIntoView({ behavior: 'smooth'});
-            }, 100); // Delay of 100ms    
-        }
-    }
-});  
+// Scroll to anchor if URL has a hash
+window.addEventListener("DOMContentLoaded", () => {
+  if (!window.location.hash) return;
 
-//homepage scroll
-window.addEventListener('load', ()=>{
+  const targetId = window.location.hash.substring(1);
+  const targetSection = document.getElementById(targetId);
+  if (!targetSection) return;
 
-    if (!window.location.hash) {
-        const element = document.getElementById('homepage');
-        if (element) {
-            element.scrollIntoView({ behavior: 'auto' });
-        }
-    }
+  setTimeout(() => {
+    targetSection.scrollIntoView({ behavior: "smooth" });
+  }, 100);
 });
 
+// Homepage scroll (only if #homepage exists)
+window.addEventListener("load", () => {
+  if (window.location.hash) return;
+
+  const element = document.getElementById("homepage");
+  if (element) element.scrollIntoView({ behavior: "auto" });
+});

@@ -26,7 +26,7 @@
             </div>
             
             <div class="project-video-wrap">
-                <figure>
+                <figure class="hero-image-lan">
                     <img src="../assets/demo/vast/Vast-hero.png" alt="Vast project demo" class="orientation-landscape"/>
                 </figure>
             </div>
@@ -71,51 +71,54 @@
             <h2>Research</h2>
                 
                 <p class="research-intro">
-                    <h4>Different contour extraction thresholds</h4>
                     
-                <h4>Multiple hatch strategies (directional, cross-hatch, voronoi)</h4>
-                <h4>Layer ordering and stroke density</h4>
                 </p>
 
-            
+            <div class="intention-text">
+                <h3>Pattern Translation and Logic</h3>
                 <p>
-                Layer ordering and stroke density
-            </p>
+                    How can generative images be translated into continuous fabrication toolpaths without losing their spatial intention? While the generative output used in this project forms an extendable, continuous pattern, it does not inherently encode the continuity required for robotic execution. For robotic arm 3D printing, the toolpath which it follows needs to be connected.
 
-            <!-- Research visual layout: two-col -->
-            <div class="research-grid-compact">
-                <!-- Left visuals -->
-                <div class="research-left">
-                <div class="research-grid research-grid-compact">
-                    <div class="research-item">
-                        <img src="../assets/demo/tempo/T-Res-Motion-01.png" alt="Motion study / motion continuity" />
-                        <span class="research-caption">Motion study: directionality & rhythm</span>
-                    </div>
-                    <div class="research-item">
-                        <img src="../assets/demo/tempo/T-Res-Motion-02.png" alt="Motion study / motion extraction" />
-                        <span class="research-caption">Motion study: motion extraction</span>
-                    </div>
-                </div>
+                </p>
+                <p>
+                    To address this, we structured the production process into three layers: a base layer for material grounding, a contour layer to define structural edges where the , and a layer for large-scale spatial organization. This layered approach allows us to examine which visual features of the generative image, such as density, depth, and regional contrast, carry structural potential when translated into motion.
+                </p>
+                <p>
+                    My work focuses on interpreting the image through feature extraction. I use a depth map derived from the generative output to extract contour lines, treating depth as a proxy for spatial hierarchy rather than visual surface detail. This allows structurally significant regions to emerge independently of texture or noise. From these contours, I further design continuous infill patterns that connect isolated contours into executable toolpaths suitable for robotic arm fabrication.
 
-                <div class="research-item research-item-wide">
-                    <img src="../assets/demo/tempo/T-Res-Motion-03.png" alt="Continuity traces / trail experiments" />
-                    <span class="research-caption">Continuity traces: trails as time-based record</span>
-                </div>
-                </div>
+                </p>
 
-                <!-- Right text -->
-                <div class="intention-text">
-                    <h3>Why particles</h3>
+                <h3>Algorithmic Infill Strategies</h3>
+                <p>
+                    The fabrication toolpaths are generated using three algorithmic pattern strategies. Each method interprets the same generative image through a different spatial logic, revealing how abstraction choices directly affect material behavior.
+                </p>
+
+                    <p><strong>(1) Marching Squares</strong> </p>
+                     <p>A traditional hatch pattern is adapted to follow the contours of the extracted lines. This method emphasizes linearity and continuity, allowing the robotic arm to maintain a steady motion while filling in areas between contours.</p>   
+                    <p><strong>(2) Cross Hatching</strong> </p>
+                    <p>Encodes tonal variation through directional stroke density, producing rhythmic, motion-driven material accumulation.</p>
+                    <p><strong>(3) Voronoi Subdivision</strong></p>
+                    <p>Introduces local variation through spatial partitioning, allowing regional differentiation within an overall system.</p>
+
                     <p>
-                        Compared to geometry, particles can represent force as flow—accumulating, dispersing, and transforming over time—creating
-                        a more continuous trace of motion.
+                        Across all three strategies, the same generative image produces radically different fabrication outcomes. Voronoi subdivision patterns create more expressive outcomes, as a result we choose it as the infill for the largest section.
                     </p>
+            </div>
+            <div class=" dev-thumbs">
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/vast/r-og-generative.png" alt="Contour extraction process">
+                    <figcaption class="dev-caption">Original generative image</figcaption>
+                </figure>
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/vast/vast-dev-contour.png" alt="Contour extraction process">
+                    <figcaption class="dev-caption">The original contour was too complex and disconnected</figcaption>
+                </figure>
 
-                    <h3>What “continuity” means here</h3>
-                    <p>
-                        Continuity is treated as temporal coherence—how momentum carries across frames—rather than a sequence of discrete poses.
-                    </p>
-                </div>
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/vast/r-contour-abstraction-1.jpg" alt="Contour extraction process">
+                    <figcaption class="dev-caption">A potential connected contour for the tool path</figcaption>
+                </figure>
+
             </div>
         </div>
         
@@ -129,67 +132,58 @@
     
         <div class="container">
             <h2>Development</h2>
-
-            <!-- Optional dev video (if you have) -->
-            <div class="dev-video-wrap">
-                <figure>
-                    <img src="../assets/demo/tempo/T-Dev-mocap-animation.svg" alt="mocap data animation">
-                </figure>
-            </div>
-
-            <!-- Iteration ladder-->
-            <div class="iteration-block">
-                <div class="iteration-title">Iteration 1 — Motion cleanup & stable vectors</div>
-                <div class="iteration-callout">
-                    <p><strong>Goal:</strong> preserve continuity while reducing noise.</p>
-                    <p><strong>Result:</strong> usable velocity/acceleration signals for force mapping.</p>
-                </div>
-            </div>
-            <div class="dev-thumbs-2">
-                <figure class="dev-thumb">
-                    <img src="../assets/demo/tempo/T-Dev-mocap-animation.svg" alt="Mocap cleanup" />
-                    <div class="dev-caption">Before / after smoothing</div>
-                </figure>
-                <figure class="dev-thumb">
-                    <img src="../assets/demo/tempo/T-Dev-vector-01.gif" alt="Vector extraction" />
-                    <div class="dev-caption">Vector extraction tests</div>
-                </figure>
-            </div>
-
-            <div class="iteration-block">
-                <div class="iteration-title">Iteration 2 — Field mapping & behavior calibration</div>
-                <div class="iteration-callout">
-                <p><strong>Goal:</strong> translate force into spatial influence (distance fields).</p>
-                <p><strong>Result:</strong> stable propagation + readable flow responses.</p>
-                </div>
-            </div>
-                <figure class="dev-thumb">
-                    <img src="../assets/demo/tempo/T-Dev-vector-mapping-demo.gif" alt="Field visualization" />
-                    <div class="dev-caption">Field probes visualization</div>
-                </figure>
-         
-
-            <div class="iteration-block">
-                <div class="iteration-title">Iteration 3 — Trail logic for continuity</div>
-                <div class="iteration-callout">
-                    <p><strong>Goal:</strong> make temporal continuity legible through trails.</p>
-                    <p><strong>Result:</strong> length/curl/density respond to acceleration & direction change.</p>
-                </div>
-                <div class="dev-thumbs-2">
+            <div class="dev-grid">
+                    <!-- Dev Image -contour extraction -->
+                  
+                    <!---
                     <figure class="dev-thumb">
-                        <img src="../assets/demo/tempo/T-Dev-trail-01.png" alt="Trail study A" />
-                        <div class="dev-caption">Original Trail</div>
-                    </figure>
-                    <figure class="dev-thumb">
-                        <img src="../assets/demo/tempo/T-Dev-swirl-01.png" alt="Trail study B" />
-                        <div class="dev-caption">Trail variant A: Add directional control for each particle strength: 20%</div>
-                    </figure>
-                        <figure class="dev-thumb">
-                        <img src="../assets/demo/tempo/T-Dev-swirl-02.png" alt="Final trail logic" />
-                        <div class="dev-caption">Trail variant B: Add directional control for each particle, strength: 80%</div>
+                            <img src="../assets/demo/vast/vast-dev-contour-extraction.png" alt="Contour extraction">
+                            <figcaption class="dev-caption">Contour extraction from the generated image</figcaption>
                         </figure>
-                </div>
-            </div>
+                    -->
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/vast/T-Dev-infills-1.gif" alt="Contour extraction">
+                    <figcaption class="dev-caption">Contour extraction from the generated image</figcaption>
+                </figure>
+                  
+                <!-- Dev Grid  - process -->
+                 <div class="dev-thumbs">
+                    <!-- Robotic Paint-->
+                    <figure class="dev-thumb">
+                        <img src="../assets/demo/vast/vast-Dev-robotic-paint-hatch.gif" alt="hatch pattern robotic painting">
+                        <figcaption class="dev-caption">Hatch pattern painting with robotic arm (1)</figcaption>
+                    </figure>
+                    <figure class="dev-thumb">
+                        <img src="../assets/demo/vast/vast-dev-hatch-path.gif" alt="hatch pattern painting with robotic arm">
+                        <figcaption class="dev-caption">Hatch pattern painting with robotic arm (2)</figcaption>
+                    </figure>
+                    <figure class="dev-thumb">
+                        <img src="../assets/demo/vast/vast-dev-paint-result0.png" alt="Robotic hatch paint result">
+                        <figcaption class="dev-caption">Robotic hatch paint result</figcaption>
+                    </figure>
+
+
+                    <!-- Spraying primer-->
+                    <figure class="dev-thumb">
+                        <img src="../assets/demo/vast/vast-dev-primer-20.png" alt="primer spraying test">
+                        <figcaption class="dev-caption">3D printed infills</figcaption>
+                    </figure>
+                     <figure class="dev-thumb">
+                        <img src="../assets/demo/vast/vast-dev-primer-020.png" alt="primer spraying test">
+                        <figcaption class="dev-caption">Primer spraying</figcaption>
+                    </figure>
+                    <!-- Final assembly-->
+                    <figure class="dev-thumb">
+                        <img src="../assets/demo/vast/vast-dev-print-ressult-01.png" alt="Final assembly">
+                        <figcaption class="dev-caption">Final assembly</figcaption>   
+                    </figure>
+                 </div>
+
+                 <!-- Final Result -->
+                <figure class="dev-thumb">
+                    <img src="../assets/demo/vast/vast-hero-hq.jpg" alt="Final Result">
+                    <figcaption class="dev-caption">Final Result</figcaption>
+                </figure>
         </div>
     </section>
     

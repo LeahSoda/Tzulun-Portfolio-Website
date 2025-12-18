@@ -167,6 +167,12 @@ header {
     z-index: 1;
     /*pointer-events: none;*/
 }
+.hero-image-landscape {
+    transform: rotate(90deg);
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
 
 .hero-content {
     position: relative;
@@ -778,6 +784,8 @@ footer {
     text-align: left;
 }
 
+
+
 .dev-thumbs-large{
     display: grid;
     grid-template-columns: 1fr;
@@ -802,6 +810,14 @@ footer {
     object-position: center 10%;
 }
 
+.dev-thumbs-vertical{
+    width: 100%;
+    height: 320px;                 /* unified visual height */
+    object-fit: cover;             /* crop instead of stretch */
+    object-position: center bottom;/* keep bottom aligned */
+    border-radius: 6px;
+    display: block;
+}
 .dev-caption {
     padding-top: 0.5rem;
     text-align: center;
@@ -823,6 +839,12 @@ footer {
     margin-top: 1rem;
     align-items: start;
     text-align: left;
+}
+
+/* for detail dev image demonstration */
+.dev-grid{
+    display: grid;
+    gap: 4rem;
 }
 
 @media (max-width: 1000px) {

@@ -33,6 +33,14 @@ body {
     overflow-x: hidden;
 }
 
+.about-image img {
+    width: 20%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 18px;
+}
 /* --- Header --- */
 header {
     display: flex;
@@ -596,6 +604,14 @@ footer {
     align-items: center;
 }
 
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
 .link {
     color: #111;
     font-weight: 600;

@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 1px;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
@@ -799,7 +799,14 @@ footer {
     align-items: start;
     text-align: left;
 }
-
+.dev-thumbs-2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: start;
+    text-align: left;
+}
 
 
 .dev-thumbs-large{
@@ -961,11 +968,6 @@ header,
 .research-grid-compact .research-item img {
   height: 280px;
   object-fit: cover;
-}
-
-/* Optional: one wide item below the 2-up grid */
-.research-item-wide img {
-     
 }
 
 /* Right column text */
@@ -1303,4 +1305,106 @@ header,
 
 .orientation-lansdcape {
     transform: rotate(-90deg);
+}
+
+/* =====================================================
+   SDE System Diagrams
+   ===================================================== */
+
+.sde-diagram{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Theme variables (can map to your site palette) */
+.sde-diagram{
+  --panel: #ffffff;
+  --stroke: #D6D9DE;
+  --stroke2: #C7CBD2;
+  --text: #111827;
+  --muted: #6B7280;
+  --accent: #F59E0B;
+  --shadow: rgba(17,24,39,.06);
+}
+
+/* Typography */
+.sde-diagram .t{
+  font: 600 18px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  fill: var(--text);
+}
+.sde-diagram .s{
+  font: 500 13px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  fill: var(--muted);
+  letter-spacing: .2px;
+}
+.sde-diagram .l{
+  font: 600 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  fill: var(--text);
+}
+
+/* Panels */
+.sde-diagram .box{
+  fill: var(--panel);
+  stroke: var(--stroke);
+  stroke-width: 1.5;
+  rx: 16;
+}
+.sde-diagram .box2{
+  fill: #FCFCFD;
+  stroke: var(--stroke);
+  stroke-width: 1.2;
+  rx: 14;
+}
+.sde-diagram .header{
+  fill: #FBFBFC;
+  stroke: var(--stroke);
+  stroke-width: 1.5;
+  rx: 18;
+}
+
+/* Lines */
+.sde-diagram .arrow{
+  stroke: var(--stroke2);
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Highlight pill */
+.sde-diagram .pill{
+  fill: #FFF7ED;
+  stroke: rgba(245,158,11,.35);
+  stroke-width: 1.2;
+  rx: 999;
+}
+
+/* Shadows */
+.sde-diagram .shadow{
+  filter: drop-shadow(0 10px 20px var(--shadow));
+}
+
+/* Policy envelope */
+.sde-diagram .loopFill{
+  fill: rgba(245,158,11,0.10);
+}
+.sde-diagram .loopStroke{
+  fill: none;
+  stroke: rgba(245,158,11,0.55);
+  stroke-width: 2.5;
+}
+.sde-diagram .loopArrow{
+  fill: none;
+  stroke: rgba(245,158,11,0.75);
+  stroke-width: 2.8;
+}
+.sde-diagram .loopLabel{
+  font: 600 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  fill: rgba(146,64,14,0.90);
+  letter-spacing: .2px;
+}
+.loopFill {
+  fill: rgba(245,158,11,0.08);
+}
+.loopStroke {
+  stroke-width: 3;
 }

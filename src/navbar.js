@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       <nav class="nav-bar" id="homepage-nav-bar">
         <a class="nav-bar-link" href="${prefix}index.html#projects">Projects</a>
-        <a class="nav-bar-link" href="${prefix}about.html">About</a>
+        <a class="nav-bar-link" href="${prefix}about.html">About me</a>
         <a class="nav-bar-link" href="${prefix}Doc/Tzulun_Huang_CV.pdf">CV</a>
       </nav>
 

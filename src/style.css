@@ -34,12 +34,11 @@ body {
 }
 
 .about-image img {
-    width: 20%;
+    width: 28%;
     height: auto;
     display: block;
     margin: 0 auto;
     object-fit: cover;
-    border-radius: 18px;
 }
 /* --- Header --- */
 header {

@@ -34,12 +34,11 @@ body {
 }
 
 .about-image img {
-    width: 20%;
+    width: 28%;
     height: auto;
     display: block;
     margin: 0 auto;
     object-fit: cover;
-    border-radius: 18px;
 }
 /* --- Header --- */
 header {
@@ -309,7 +308,7 @@ header {
 /* --- Gallery --- */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }

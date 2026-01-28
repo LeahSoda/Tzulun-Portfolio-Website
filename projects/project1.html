@@ -23,16 +23,17 @@
                 <p class="hero-text">How can movement become a medium through which people think, explore, and create?
                 </p>
             </div>
-                <!-- Project Video (main hero embed) -->
-                        <div class="project-video-wrap">
-                            <iframe
-                                src="https://player.vimeo.com/video/1146517502?&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                                frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-                                allow="autoplay; fullscreen; picture-in-picture" 
-                                title="Echoes of Motion preview"
-                                style="cursor: pointer;">
-                            </iframe>
-                        </div>
+
+            <!-- Project Video (main hero embed) -->
+            <div class="project-video-wrap">
+                <iframe
+                    src="https://player.vimeo.com/video/1146517502?&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+                    allow="autoplay; fullscreen; picture-in-picture" 
+                    title="Echoes of Motion preview"
+                    style="cursor: pointer;">
+                </iframe>
+            </div>
                 <div class="hero-meta">
                     <p>2025 | Personal Research Project</p>
                 </div>
@@ -153,7 +154,7 @@
             </p>
 
             <div class="container">
-            <h3>Gesture as Readiness</h3>
+            <h3>Gestures as Readiness Signal</h3>
 
             <div class="intention">
                 <div class="intention-text">
@@ -280,6 +281,46 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Section 3.5: Design Mapping-->
+    <section id="project-design" class="section design-section visible">
+        <div class="container">
+            <h2>Design Mapping</h2>
+
+            <h3>Visual Medium</h3>
+            <p class="design-paragraph">
+                The visual system draws inspiration from shuimo (水墨), traditional Chinese ink-wash painting, where ink interacts
+                dynamically with water and paper rather than remaining fixed or contained. In these works, a single mark can spread,
+                bleed, or dissipate over time, shaped by material conditions rather than precise control. Echoes of Motion adopts
+                digital ink as an interactive medium to mirror this logic. Bodily cues act as triggers on a virtual wet canvas: when activated,
+                ink emerges, diffuses, and leaves traces that persist and evolve like ripples. This material metaphor supports
+                interaction as gradual, negotiated, and irreversible, aligning visual response with embodied presence rather than
+                discrete commands.
+            </p>
+            <figure class="research-item">
+                <img src="../assets/demo/interaction/shuimo_example_lo_fan.png"
+                alt="Shuimo">
+                <figcaption class="research-caption">
+                    Shuimo painting by artist Fong Lo.
+                </figcaption>
+            </figure>
+
+            <h3>Stroke Mapping</h3>
+            <p class="design-paragraph">
+                In shuimo painting, stroke behavior varies according to the degree of brush wetness, allowing material conditions
+                to shape how ink spreads, bleeds, or settles on paper. Echoes of Motion adopts a similar principle by
+                modulating the canvas’s response behavior through feedback loops and noise-diffusion logic, enabling visual
+                outcomes to emerge from interaction dynamics rather than fixed mappings.
+            </p>
+            <figure class="research-item">
+                <img src="../assets/demo/interaction/shuimo-stroke2.png"
+                alt="Stroke Mapping">
+                <figcaption class="research-caption">
+                    Different Shuimo strokes dif fer by brush wetness
+                </figcaption>
+            </figure>
         </div>
     </section>
 
@@ -553,9 +594,12 @@
                     <figcaption class="dev-caption">Smoothing z-depth noise with Kalman filter avoids jitter in approach/retreat detection with webcam</figcaption>
                 </figure>
             </div>
+        </section>
 
-            <div class="section">
-                <h3 class="iteration-title">Different Variations </h3>
+        <!-- Variations-->
+        <section id="project-title" class="section intention visible">
+            <div class="hero-content">
+                <h2 class="iteration-title">Different Variations </h2>
 
                 <div class="project-video-wrap">
                     <iframe
@@ -565,20 +609,19 @@
                         title="Echoes of Motion preview"
                         style="cursor: pointer;">
                     </iframe>
-              </div>
-              <figure class="dev-thumbs-large">
-                <!--    <img src="../assets/demo/interaction/Dev-Sense-03.gif" alt="Variation in ink responsiveness"> -->
-                    <figcaption class="dev-caption">Variation: ink difussion retain and responsiveness</figcaption>
-                </figure>
+                </div>
+                <div class="container">
+                    <div class="project-synopsis">
+                        <p>
+                            By combining sensing stabilization with expanded gesture mapping, interaction becomes fluid, layered, and responsive to subtle bodily variation.
+                            Together, these iterations shaped the system into a more stable, expressive feedback loop.
+                        </p>
+                    </div>
+                    
+                </div>
             </div>
-            <!-- Synthesis -->
-            <p class="dev-paragraph">
-                By combining sensing stabilization with expanded gesture mapping, interaction becomes fluid, layered, and responsive to subtle bodily variation.
-                Together, these iterations shaped the system into a more stable, expressive feedback loop.
-            </p>
-
-        </div>
-    </section>
+        </section>
+            
     
     </section>
     <!-- Section 6: Outcomes & Reflection -->

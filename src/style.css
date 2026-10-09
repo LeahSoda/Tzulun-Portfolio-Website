@@ -8,6 +8,8 @@
 body {
     background: #fff;
     color: #111;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .logo {
@@ -70,7 +72,19 @@ header {
     padding: 0.5rem 1rem;
     z-index: 10;
 }
+/* three cursor */
+#three-cursor-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
 
+#three-cursor-canvas canvas {
+    display: block;
+}
+
+/* nav bar */
 .nav-bar {
     position: absolute;
     top: 3rem;

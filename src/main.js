@@ -5,6 +5,89 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
 
+// Set this duration in milliseconds to adjust desktop section transitions.
+function initTimedSectionScroll() {
+  if (
+    document.body.classList.contains("project2-page") ||
+    window.matchMedia("(pointer: coarse)").matches ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) return;
+
+  const sections = Array.from(document.querySelectorAll("body:not(.project2-page) > section.section"));
+  if (sections.length < 2) return;
+
+  const transitionDuration = 850;
+  document.documentElement.classList.add("timed-section-scroll");
+  let animationFrame = 0;
+
+  const getCurrentSectionIndex = () => {
+    const activeIndex = sections.findIndex((section) => {
+      const bounds = section.getBoundingClientRect();
+      return bounds.top <= 1 && bounds.bottom > 1;
+    });
+    if (activeIndex !== -1) return activeIndex;
+    return sections.findIndex((section) => section.getBoundingClientRect().top > 1);
+  };
+
+  const scrollToSection = (index) => {
+    if (animationFrame || index < 0 || index >= sections.length) return false;
+
+    const startY = window.scrollY;
+    const distance = sections[index].getBoundingClientRect().top;
+    const startTime = performance.now();
+
+    const animate = (time) => {
+      const progress = Math.min((time - startTime) / transitionDuration, 1);
+      const eased = progress < 0.5
+        ? 4 * progress ** 3
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      window.scrollTo(0, startY + distance * eased);
+
+      if (progress < 1) animationFrame = window.requestAnimationFrame(animate);
+      else animationFrame = 0;
+    };
+
+    animationFrame = window.requestAnimationFrame(animate);
+    return true;
+  };
+
+  const moveSection = (direction, event) => {
+    if (document.body.classList.contains("image-lightbox-open")) return;
+    if (animationFrame) {
+      event.preventDefault();
+      return;
+    }
+
+    const currentIndex = getCurrentSectionIndex();
+    if (currentIndex < 0) return;
+
+    const bounds = sections[currentIndex].getBoundingClientRect();
+    const isAtTop = bounds.top >= -2;
+    const isAtBottom = bounds.bottom <= window.innerHeight + 2;
+    if ((direction > 0 && !isAtBottom) || (direction < 0 && !isAtTop)) return;
+
+    if (scrollToSection(currentIndex + direction)) event.preventDefault();
+  };
+
+  window.addEventListener("wheel", (event) => {
+    if (Math.abs(event.deltaY) >= 12) moveSection(Math.sign(event.deltaY), event);
+  }, { passive: false });
+
+  window.addEventListener("keydown", (event) => {
+    const target = event.target;
+    if (target instanceof Element && target.closest("input, textarea, select, [contenteditable='true']")) return;
+
+    const direction = ["ArrowDown", "PageDown"].includes(event.key)
+      ? 1
+      : ["ArrowUp", "PageUp"].includes(event.key)
+        ? -1
+        : 0;
+    if (direction) moveSection(direction, event);
+  });
+}
+
+window.addEventListener("DOMContentLoaded", initTimedSectionScroll);
+
 // Section enter scrolling animation
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".section");

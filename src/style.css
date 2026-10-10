@@ -497,6 +497,18 @@ body.image-lightbox-open {
   object-position: center; 
 }
 
+/* Native slide-like snapping remains available on touch and reduced-motion devices. */
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+}
+
+/* The timed desktop scroller handles section transitions when enabled. */
+html.timed-section-scroll {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
 /* --- Section --- */
 .section {
     padding: 6rem 2rem;
@@ -507,6 +519,36 @@ body.image-lightbox-open {
     margin: 0 20%;
     /* horizontal 20% margin on both sides */
 }
+
+  /* Content sections fill at least one viewport without clipping longer content. */
+  body:not(.project2-page) > section.section {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    padding: clamp(4rem, 8vh, 7rem) max(1.5rem, calc((100vw - 1100px) / 2));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+  }
+
+  /* Keep section contents aligned to one centered column. */
+  body:not(.project2-page) > section.section > .container,
+  body:not(.project2-page) > section.section > .hero-content,
+  body:not(.project2-page) > section.section > .about-container,
+  body:not(.project2-page) > section.section > .homepage {
+    width: 100%;
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+      scroll-snap-type: none;
+    }
+  }
 
 .section.visible {
     opacity: 1;
@@ -1290,9 +1332,6 @@ header,
 /* --- Reflection Section --- */
 .reflection-section {
   background: #fafafa;
-  max-width: 1000px;
-  margin: 2rem auto 0;
-    
 }
 
 .reflection-block {

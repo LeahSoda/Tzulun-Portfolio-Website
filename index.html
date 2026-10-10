@@ -20,6 +20,28 @@
             <span class="header-bar"><h1 id="company-name">Tzulun Huang</h1></span>
         </div>
     </section>
+
+    <!-- Hero Section: Media Artwork & Interactive Hover Shader -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content container reveal">
+            <div class="hero-media-wrapper">
+                
+                <!-- Featured Media Art / Project Video Anchor with URL Placeholder -->
+                <div class="hero-artwork-frame">
+                    <img src="assets/image/boids_mole.png" alt="Featured Artwork" class="hero-artwork-image">
+                    <div id="hero-hover-canvas" aria-hidden="true"></div>
+                    <!--
+                        //Video Element for Featured Artwork
+                        <video autoplay muted loop playsinline class="hero-artwork-video">
+                        <source src="YOUR_VIDEO_URL_HERE.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                        </video>
+                    -->
+                    <div class="artwork-overlay-badge">Featured Artwork • Void Boids</div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Project Gallery Section -->
     <section id="projects" class="section">
@@ -115,5 +137,6 @@
     <script defer src="src/navbar.js"></script>
     <script defer src="src/three.js"></script>
     <script defer src="src/section-nav.js"></script>
+    <script src="src/hero_art.js" defer></script>
 
 </html>

@@ -176,10 +176,16 @@ header {
 }
 
 /* nav bar */
+#navbar-placeholder {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .nav-bar {
     position: absolute;
     top: 3rem;
-    right: 20%;
+    right: 1px;
     display: flex;
     gap: 1.5rem;
     z-index: 100;
@@ -400,6 +406,30 @@ body.image-lightbox-open {
     text-emphasis: center;
 }
 
+  .hero-artwork-frame {
+    position: relative;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  .hero-artwork-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  #hero-hover-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  #hero-hover-canvas canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
 .hero-text {
   width: 100%;
     max-width: 720px;
@@ -520,6 +550,8 @@ html.timed-section-scroll {
     /* horizontal 20% margin on both sides */
 }
 
+
+
   /* Content sections fill at least one viewport without clipping longer content. */
   body:not(.project2-page) > section.section {
     width: 100%;
@@ -534,10 +566,10 @@ html.timed-section-scroll {
   }
 
   /* Keep section contents aligned to one centered column. */
-  body:not(.project2-page) > section.section > .container,
-  body:not(.project2-page) > section.section > .hero-content,
-  body:not(.project2-page) > section.section > .about-container,
-  body:not(.project2-page) > section.section > .homepage {
+  body > section.section > .container,
+  body > section.section > .hero-content,
+  body > section.section > .about-container,
+  body > section.section > .homepage {
     width: 100%;
     max-width: 1100px;
     margin-inline: auto;

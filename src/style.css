@@ -586,7 +586,7 @@ html.timed-section-scroll {
 
 
   /* Content sections fill at least one viewport without clipping longer content. */
-  body:not(.project2-page) > section.section {
+  body > section.section {
     width: 100%;
     min-height: 100vh;
     min-height: 100svh;

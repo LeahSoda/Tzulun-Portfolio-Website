@@ -372,7 +372,7 @@ body.image-lightbox-open {
     /*pointer-events: none;*/
 }
 .orientation-landscape {
-    transform: rotate(90deg);
+  transform: none;
     height: auto;
     border-radius: 8px;
     object-fit: cover;

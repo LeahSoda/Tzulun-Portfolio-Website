@@ -410,24 +410,30 @@ body.image-lightbox-open {
     position: relative;
     overflow: hidden;
     margin-top: 3rem;
+    padding: 0;
   }
 
   .hero-artwork-image {
     display: block;
     width: 100%;
     height: auto;
+    padding: 0;
   }
 
   #hero-hover-canvas {
     position: absolute;
     inset: 0;
     z-index: 1;
+    padding: 0;
   }
 
   #hero-hover-canvas canvas {
+    position: absolute;
+    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
+    padding: 0;
   }
 
 .hero-text {
@@ -608,7 +614,7 @@ html.timed-section-scroll {
 /* --- Gallery --- */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }

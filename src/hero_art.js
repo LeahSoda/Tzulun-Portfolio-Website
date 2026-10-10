@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setSize(container.clientWidth, container.clientHeight, false);
   container.appendChild(renderer.domElement);
 
   const scene = new THREE.Scene();
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         float accent = step(0.985, randomValue(vec2(verticalIndex, horizontalIndex) + vec2(uSeed, 109.0)));
         float tearEdge = smoothstep(1.9, 2.8, cursorDistance) * (1.0 - smoothstep(5.8, 7.0, cursorDistance)) * uHover;
-        vec3 lineColor = mix(vec3(0.86, 0.89, 0.88), vec3(1.0, 0.30, 0.16), max(accent, tearEdge * 0.22));
+        vec3 lineColor = mix(vec3(0.6, 0.9, 0.8), vec3(0.922, 0.7, 0.267), max(accent, tearEdge * 0.62));
         float opacity = linework * 0.26 + node * 0.30 + max(verticalLine, horizontalLine) * tearEdge * 0.62;
         gl_FragColor = vec4(lineColor, opacity);
       }
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resizeRenderer = () => {
     const bounds = container.getBoundingClientRect();
     if (!bounds.width || !bounds.height) return;
-    renderer.setSize(bounds.width, bounds.height);
+    renderer.setSize(bounds.width, bounds.height, false);
     uniforms.uResolution.value.set(bounds.width, bounds.height);
   };
 

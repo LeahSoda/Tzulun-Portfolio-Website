@@ -22,18 +22,18 @@ function initTimedSectionScroll() {
 
   const getCurrentSectionIndex = () => {
     const activeIndex = sections.findIndex((section) => {
-      const bounds = section.getBoundingClientRect();
-      return bounds.top <= 1 && bounds.bottom > 1;
+      const top = section.offsetTop;
+      return window.scrollY >= top - 1 && window.scrollY < top + section.offsetHeight - 1;
     });
     if (activeIndex !== -1) return activeIndex;
-    return sections.findIndex((section) => section.getBoundingClientRect().top > 1);
+    return sections.findIndex((section) => section.offsetTop > window.scrollY);
   };
 
   const scrollToSection = (index) => {
     if (animationFrame || index < 0 || index >= sections.length) return false;
 
     const startY = window.scrollY;
-    const distance = sections[index].getBoundingClientRect().top;
+    const distance = sections[index].offsetTop - startY;
     const startTime = performance.now();
 
     const animate = (time) => {
@@ -61,9 +61,10 @@ function initTimedSectionScroll() {
     const currentIndex = getCurrentSectionIndex();
     if (currentIndex < 0) return;
 
-    const bounds = sections[currentIndex].getBoundingClientRect();
-    const isAtTop = bounds.top >= -2;
-    const isAtBottom = bounds.bottom <= window.innerHeight + 2;
+    const top = sections[currentIndex].offsetTop - window.scrollY;
+    const bottom = top + sections[currentIndex].offsetHeight;
+    const isAtTop = top >= -2;
+    const isAtBottom = bottom <= window.innerHeight + 2;
     if ((direction > 0 && !isAtBottom) || (direction < 0 && !isAtTop)) return;
 
     if (scrollToSection(currentIndex + direction)) event.preventDefault();

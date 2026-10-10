@@ -1,15 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const sections = Array.from(document.querySelectorAll("body > section.section"));
+  const isIndexPage = document.getElementById("projects") && document.getElementById("contact");
   const targets = sections.map((section, index) => {
     const heading = section.querySelector("h1, h2, h3");
     return {
       element: section,
-      label: heading?.textContent.trim().replace(/\s+/g, " ") || `Section ${index + 1}`
+      label: section.id === "projects"
+        ? "Projects"
+        : heading?.textContent.trim().replace(/\s+/g, " ") || `Section ${index + 1}`
     };
   });
 
   const homepage = document.getElementById("homepage");
-  if (homepage && !sections.some((section) => section.contains(homepage))) {
+  if (homepage && !isIndexPage && !sections.some((section) => section.contains(homepage))) {
     targets.unshift({ element: homepage, label: "Home" });
   }
 
@@ -38,10 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
     dot.setAttribute("aria-hidden", "true");
     button.appendChild(dot);
     button.addEventListener("click", () => {
-      element.scrollIntoView({
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
-        block: "start"
-      });
+      const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+      if (element.parentElement === document.body) {
+        window.scrollTo({ top: element.offsetTop, behavior });
+      } else {
+        element.scrollIntoView({ behavior, block: "start" });
+      }
     });
 
     item.appendChild(button);

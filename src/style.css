@@ -371,7 +371,7 @@ body.image-lightbox-open {
     z-index: 1;
     /*pointer-events: none;*/
 }
-.hero-image-landscape {
+.orientation-landscape {
     transform: rotate(90deg);
     height: auto;
     border-radius: 8px;
@@ -497,6 +497,10 @@ body.image-lightbox-open {
       max-width: none;
       margin-left: 0;
       margin-right: 0;
+    }
+
+    body.project5-page .project-hero-media {
+      margin-inline: auto;
     }
 }
 

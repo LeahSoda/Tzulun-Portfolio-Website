@@ -192,6 +192,12 @@ header {
     pointer-events: auto;
 }
 
+  @media (max-width: 600px) {
+    .nav-bar {
+      display: none;
+    }
+  }
+
 .nav-bar-link {
     text-decoration: none;
     color: #969daf;
@@ -406,10 +412,25 @@ body.image-lightbox-open {
     text-emphasis: center;
 }
 
+.hero-section {
+    display: grid;
+    min-height: 100vh;
+    min-height: 100svh;
+    place-items: center;
+    padding: 5rem max(1.5rem, calc((100vw - 1100px) / 2)) 1.5rem;
+}
+
+.hero-section > .hero-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
   .hero-artwork-frame {
     position: relative;
     overflow: hidden;
-    margin-top: 3rem;
+    margin-top: 0;
     padding: 0;
   }
 
@@ -417,6 +438,8 @@ body.image-lightbox-open {
     display: block;
     width: 100%;
     height: auto;
+    max-height: max(180px, calc(100svh - 9rem));
+    object-fit: contain;
     padding: 0;
   }
 

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Set this duration in milliseconds to adjust desktop section transitions.
 function initTimedSectionScroll() {
   if (
-    document.body.classList.contains("project2-page") ||
+    document.body.classList.contains("project-page") ||
     window.matchMedia("(pointer: coarse)").matches ||
     window.matchMedia("(prefers-reduced-motion: reduce)").matches
   ) return;
@@ -19,6 +19,7 @@ function initTimedSectionScroll() {
   const transitionDuration = 850;
   document.documentElement.classList.add("timed-section-scroll");
   let animationFrame = 0;
+  let wheelLockUntil = 0;
 
   const getCurrentSectionIndex = () => {
     const activeIndex = sections.findIndex((section) => {
@@ -32,6 +33,7 @@ function initTimedSectionScroll() {
   const scrollToSection = (index) => {
     if (animationFrame || index < 0 || index >= sections.length) return false;
 
+    wheelLockUntil = performance.now() + transitionDuration + 180;
     const startY = window.scrollY;
     const distance = sections[index].offsetTop - startY;
     const startTime = performance.now();
@@ -71,6 +73,12 @@ function initTimedSectionScroll() {
   };
 
   window.addEventListener("wheel", (event) => {
+    const now = performance.now();
+    if (animationFrame || now < wheelLockUntil) {
+      event.preventDefault();
+      wheelLockUntil = Math.max(wheelLockUntil, now + 180);
+      return;
+    }
     if (Math.abs(event.deltaY) >= 12) moveSection(Math.sign(event.deltaY), event);
   }, { passive: false });
 

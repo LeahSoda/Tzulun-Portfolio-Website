@@ -359,6 +359,7 @@ body.image-lightbox-open {
     height: auto;
     display: block;
     border-radius: 8px;
+    border: 0;
     object-fit: cover;
 }
 
@@ -560,7 +561,7 @@ body.image-lightbox-open {
   object-position: center; 
 }
 
-/* Native slide-like snapping remains available on touch and reduced-motion devices. */
+/* Native slide-like snapping remains available when timed desktop transitions are disabled. */
 html {
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;

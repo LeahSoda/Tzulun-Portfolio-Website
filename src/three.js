@@ -1,3 +1,4 @@
+// cursor point dot
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('three-cursor-canvas');
   if (!container || typeof THREE === 'undefined') return;
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Outer Halo
   const haloGeo = new THREE.SphereGeometry(18, 32, 32);
-  const haloMat = new THREE.MeshBasicMaterial({ color: 0xF03E18, transparent: true, opacity: 0.35 });
+  const haloMat = new THREE.MeshBasicMaterial({ color: 0xF03E18, transparent: true, opacity: 0.25 });
   group.add(new THREE.Mesh(haloGeo, haloMat));
 
   scene.add(group);

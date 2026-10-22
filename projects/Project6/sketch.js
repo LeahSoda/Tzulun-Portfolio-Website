@@ -113,6 +113,11 @@ function audioanAnalysis(spectrum, micLevel) {
     harmonics: mappedHarmonics, 
     centroid: 261.63  // C4 default
   };
+  
+  // Guard against undefined or uninitialized spectrum arrays
+  if (!spectrum || !Array.isArray(spectrum) || spectrum.length === 0) {
+    return audioData;
+  }
 
   if (micLevel > noiseThreshold && spectrum) {
     audioData.bass = fft.getEnergy("bass");
@@ -130,6 +135,8 @@ function audioanAnalysis(spectrum, micLevel) {
     // 3. Find the peak frequency with the highest amplitude strictly within this octave
     let maxAmp = -1;
     let peakBin = minBin;
+
+    maxBin = min(maxBin, spectrum.length - 1);
 
     for (let i = minBin; i <= maxBin; i++) {
       if (spectrum[i] > maxAmp) {
